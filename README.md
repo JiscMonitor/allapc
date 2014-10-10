@@ -4,8 +4,20 @@ An APC demonstrator collection/dissemination API, and reports based on the data 
 
 ## Data Model
 
+The data model presented below represents a JSON-based object structure indicating the hierarchy and therefore relationships
+of the data elements in the object.  It has been expressed using the syntax of [JSON-LD](http://json-ld.org/).
+
+This is the format that we will both store and expose the data over the API for this application.
+
 ```python
 {
+    "@context": {
+        "jm": "http://jiscmonitor.jiscinvolve.org/",
+        "dc": "http://purl.org/dc/elements/1.1/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "rioxxterms": "http://rioxx.net/v2-0-beta-1/"
+    }
+    
     "id" : "<opaque internal record identifier>",
     
     "jm:dateApplied" : "<date APC was applied for by author>",
