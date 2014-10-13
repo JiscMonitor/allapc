@@ -79,7 +79,7 @@ This is the format that we will both store and expose the data over the API for 
 
 ## CRUD API
 
-The specification of the API below is a full imagining of a CRUD interface, which must be validated for usefulneww.  We may not want to do all of it.  
+The specification of the API below is a full imagining of a CRUD interface, which must be validated for usefulness.  We may not want to do all of it.  
 
 Each section also indicates Authentication and Authorisation parameters (AuthNZ) - we do not anticipate implementing these, but they exist to indicate
 what would likely be required from a full system/protocol specification.
@@ -155,7 +155,7 @@ Either method will return the results in the format provided by Elasticsearch
 
 *Note: the planned implementation will use Elasticsearch, which provides powerful search semantics, and a URL-based
 search interface which wraps this seems unnecessary.  If there are regular searches which warrant explicit semantics
-then we may wish to consider that in the future (e.g. see the **Change List** below)*
+then we may wish to consider that in the future (e.g. see the Change List below)*
 
 
 #### Change List
@@ -164,7 +164,7 @@ then we may wish to consider that in the future (e.g. see the **Change List** be
 
 Obtain the changes to the set of records in a given time period
 
-    GET /changes?from=<date>&to=<date>&size=<page size>
+    GET /changes?from=<date>&until=<date>&size=<page size>&page=<page number>
 
 Returns the results in the format provided by Elasticsearch
 
@@ -198,12 +198,12 @@ Each record must provide an identifier for the existing record that it replaces.
 
 Mixed create/replace operations can be supported - records which provide an ID will be overwritten, record which do not will create new entries.
 
-Returns 201 if all records can be successfully imported, or a 400 if any of the records could not be imported.
+Returns 200 if all records can be successfully imported, or a 400 if any of the records could not be imported.
 
 In the event of success the response body contains a list of URLs to the created resources and whether they were creates or updates
 
-*Note: similar comments as appear in **Add a list of records** apply here with regard to having an operation which either clearly
-completes or clearly fails, rather than som in-between state*
+*Note: similar comments as appear in "Add a list of records" apply here with regard to having an operation which either clearly
+completes or clearly fails, rather than some in-between state*
 
 
 ### Delete
@@ -228,8 +228,8 @@ Delete a list of records as identified by their unique ids
     
 Returns a 204 if all records can be successfully deleted (and are), or a 404 if any of the records do not exist
 
-*Note: similar comments as appear in **Add a list of records** apply here with regard to having an operation which either clearly
-completes or clearly fails, rather than som in-between state*
+*Note: similar comments as appear in "Add a list of records" apply here with regard to having an operation which either clearly
+completes or clearly fails, rather than some in-between state*
 
 ## Analytics API
 
@@ -240,7 +240,7 @@ a variety of reporting use cases.
 
 Statistics on expenditure can be obtained by hitting the /stats endpoint, which has the following forms
 
-To obtain a paged result-set of expenditure per value of an aspect (e.g. the list of expenditures by publisher):
+To obtain a result-set of expenditure per value of an aspect (e.g. the list of expenditures by publisher):
 
     GET /stats/<aspect>
 
