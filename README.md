@@ -5,76 +5,137 @@ An APC demonstrator collection/dissemination API, and reports based on the data 
 ## Data Model
 
 The data model presented below represents a JSON-based object structure indicating the hierarchy and therefore relationships
-of the data elements in the object.  It has been expressed using the syntax of [JSON-LD](http://json-ld.org/).
+of the data elements in the object.  It has been expressed using the syntax of [JSON-LD](http://json-ld.org/) where appropriate 
+(i.e inside the "montior" element), and reprenents both the shareable APC data and the internal information required for an 
+application to manage the data.
 
-This is the format that we will both store and expose the data over the API for this application.
+Where possible top-level keys in the "monitor" section of the model have been taken from the following metadata schemas/profiles:
+
+* [The DCMI Terms](http://dublincore.org/documents/dcmi-terms/)
+* [RIOXX](http://rioxx.net/v2-0-beta-1/)
 
 ```python
 {
-    "@context": {
-        "jm": "http://jiscmonitor.jiscinvolve.org/",
-        "dc": "http://purl.org/dc/elements/1.1/",
-        "dcterms": "http://purl.org/dc/terms/",
-        "rioxxterms": "http://rioxx.net/v2-0-beta-1/"
-    }
-    
     "id" : "<opaque internal record identifier>",
     
-    "jm:dateApplied" : "<date APC was applied for by author>",
-    "jm:submittedBy" : "<identifier for author submitting request (ORCID)>",
-    "jm:orgUnit" : "<organisational unit the submitting author belongs to>",
-    "jm:org" : "<organisation handling this request>",
-    
-    "dc:identifier" : [
-        {"type" : "pmcid", "value" : "<europe pubmed central id>"},
-        {"type" : "pmid", "value" : "<pubmed id>"},
-        {"type" : "doi", "value" : "<doi>"}
-    ],
-    
-    "dc:source" : {
-        "journal" : "<name of the journal>",
-        "value" : "<issn of the journal>"
+    "admin" : {
+        "owner" : "<user account who provided this record originally>",
+        "local_id" : "<identifier supplied by the user for this record>"
     },
     
-    "rioxxterms:author" : [
-        {"id" : "<author's orcid>", "value" : "<author name>"}
-    ],
-    
-    "dcterms:publisher" : "<publisher of the article>",
-    "rioxxterms:type" : "<publication type>",
-    "dc:title" : "<title>",
-    "rioxxterms:publication_date" : "<publication date>",
-    "rioxxterms:project" : [
-        {
-            "funder_name" : "<name of funder>", 
-            "funder_id" : "<id of funder>", 
-            "value" : "<funder's grant number>"
+    "monitor" : {
+        "@context": {
+            "jm": "http://jiscmonitor.jiscinvolve.org/",
+            "dc": "http://purl.org/dc/elements/1.1/",
+            "dcterms": "http://purl.org/dc/terms/",
+            "rioxxterms": "http://rioxx.net/v2-0-beta-1/"
         }
-    ],
-    "jm:apc" : {
-        "paid_from" : [ "<name of organisation>"],
-        "date_paid" : "<date apc paid>",
-        "amount_paid" : <amount paid in native currency>,
-        "currency" : "<currency paid in>",
-        "amount_paid_gbp" : <amount paid in equivalent GBP>,
-        "additional_costs" : <additional apc costs>,
-        "discounts" : "<description of any discounts applied>",
-        "coaf" : <amount charged to coaf in GBP>
-    },
-    
-    "jm:license" : {
-        "requested" : "<name of licence requested>",
-        "received" : true|false,                     # was the licence as requested
-        "problem_free" : true|false                  # problem free OA publication?
-    },
-    
-    "jm:notes" : ["<notes associated with the record>"]
-    
-    "jm:admin" : {
-        "owner" : "<user who provided this record originally>"
+        
+        "jm:dateApplied" : "<date APC was applied for by author>",
+        "jm:submittedBy" : {
+            "name" : "<name of the corresponding author>",
+            "id" : "<identifier for author submitting request (ORCID)>",
+        }
+        "jm:orgUnit" : "<organisational unit the submitting author belongs to>",
+        "jm:org" : {
+            "name" : "<organisation handling this request>",
+            "id" : "<organisation identifier>"
+        }
+        
+        "dc:identifier" : [
+            {"type" : "pmcid", "id" : "<europe pubmed central id>"},
+            {"type" : "pmid", "id" : "<pubmed id>"},
+            {"type" : "doi", "id" : "<doi>"},
+            {"type" : "url", "id" : "<url to object>"}
+        ],
+        
+        "dc:source" : {
+            "name" : "<name of the journal or other source (e.g. book)>",
+            "identifier" : [
+                {"type" : "issn", "id" : "<issn of the journal>" },
+                {"type" : "doi", "id" : "<doi for the journal or series>" }
+            ]
+        },
+        
+        "rioxxterms:author" : [
+            {"id" : "<author's orcid>", "value" : "<author name>"}
+        ],
+        
+        "dcterms:publisher" : {
+            "name" : "<publisher of the article>",
+            "id" : "<publisher identifier>"
+        },
+        "rioxxterms:type" : "<publication type>",
+        "dc:title" : "<title>",
+        "rioxxterms:publication_date" : "<publication date>",
+        "rioxxterms:project" : [
+            {
+                "funder_name" : "<name of funder>", 
+                "funder_id" : "<id of funder>", 
+                "grant_number" : "<funder's grant number>"
+            }
+        ],
+        "jm:apc" : {
+            "paid_by" : [
+                { 
+                    "name" : "<name of organisation>",
+                    "id" : "<organisation identifier>",
+                    "amount" : <amount paid in native currency>,
+                    "currency" : "<currency paid in>"
+                    "amount_gbp" : <amount paid in equivalent GBP>
+                }
+            ],
+            "date_paid" : "<date apc paid>",
+            "amount" : <amount paid in native currency>,
+            "currency" : "<currency paid in>",
+            "amount_gbp" : <amount paid in equivalent GBP>,
+            "additional_costs" : <additional apc costs in GBP>,
+            "discounts" : "<description of any discounts applied>",
+            "coaf" : <amount charged to coaf in GBP>
+        },
+        
+        "jm:licence" : {
+            "requested" : "<name of licence requested>",
+            "received" : true|false,
+            "problem_free" : true|false
+        },
+        
+        "jm:notes" : ["<notes associated with the record>"]
     }
 }
 ```
+
+Note that each entity in the data (such as author, publisher, organisation) have space for both a name (ideally from a standard 
+list) and an identifier (of unspecified schema).  The hope is that we can at least find a way to uniquely identify these entities
+such that we can determine equivalences across the dataset.
+
+QUESTION: do we need to be even more flexible with identifiers here?  Should we have either the id field be a list of opaque identifiers,
+or a full fledged "identifier" section with a type and an id?
+
+Descriptions of notable fields, and the requirements for their use are as follows:
+
+* **admin** - this is where we will store all data to do with administering the record within an application.  It will therefore be unlikely to 
+be shared via an API, and the values in here should not be held to a requirement to be "standardised".
+* **monitor** - this is the field where the main data concerning the APC is held.  This is the data that will be shared via the API, and is
+therefore the part of the model expressed with JSON-LD, as it should be "standardised" as much as possible.
+* **monitor.jm:dateApplied** - an ISO 8601 formatted date (e.g. 2014-10-16T17:34:03Z)
+* **monitor.dc:identifier** - should contain at least a URL to the object (as per RIOXX).  **Mandatory**
+* **monitor.dc:source** - the RIOXX profile considers this to principally a journal, but it will take any other object that is a suitable source
+such as a book.  **Mandatory where applicable**.
+* **monitor.rioxxterms:author**  - as per the RIOXX profile this field is **Mandatory** (although note that it often isn't present)
+* **monitor.dc:publisher** - as per the RIOXX profile this field is **Recommended**.
+* **monitor.rioxxterms:type** - confirms to the RIOXX profile for controlled vocabulary of terms.  **Mandatory** (although note that it often isn't present).
+* **monitor.dc:title** - as per the RIOXX profile this field is **Mandatory**
+* **monitor.rioxxterms:project**  - as per the RIOXX profile this field is **Mandatory**
+* **monitor.jm:apc** - this field should not be confused with rioxxterms:apc, which has a different purpose.  In this data model this provides a 
+wrapper for detailed information about APC payments.
+* **monitor.jm:apc.paid_by** - This may contain a list of organisations who in some way contributed to the APC.  They may not have contributed financially, in which case
+"amount" can be omitted or set to 0 (this will be the default if not value is provided).  The total of all the amounts in this list MUST add up to the
+total amount paid.
+* **monitor.jm:licence.received** - was the licence that was ultimately applied to the publication that which the APC paid for?
+* **monitor.jm:licence.problem_free** - was the Open Access publication of the material problem free?
+* **monitor.jm:notes** - free text content to be supplied by the organisation providing the record.  Can be used to detail any information that is not
+codified elsewhere in the data model.
 
 
 ## CRUD API
@@ -100,28 +161,6 @@ Create a single record using the APC object specified in the Data Model:
 Returns 201, and a Location header with the URL for the created object, plus a response body with the URL for the object
 
 
-#### Add a list of records
-
-**AuthNZ**: Authenticated User
-
-Create records in bulk either in the standard format or from a CSV
-
-    POST /list
-    Content-Type: application/json OR text/csv
-    [list of apc objects or csv]
-    
-    
-Returns 201 if all records can be successfully imported, or a 400 if any of the records could not be imported.
-
-In the event of success the response body contains a list of URLs to the created resources.
-
-*Note: in order to be fully REST compliant, we must provide a "list" resource upon which to carry out such bulk operations*
-
-*Note 2: lists of records must succeed or fail in bulk otherwise we require a complex return body to describe to the 
-client what happened, and clients will need to be sufficiently advanced to handle such a return.  As such, for simplicity
-we should require operations either clearly succeed or clearly fail, rather than some in-between state*
-
-
 ### Retrieve
 
 Mechanisms to retrieve APC data records
@@ -137,7 +176,41 @@ Get an individual APC record back by id
 Returns 200 and the APC record as JSON in the body, or 404 if the record could not be found
 
 
-#### Search
+### Update
+
+#### Replace an APC record by ID
+
+**AuthNZ**: Authenticated User + (Owner of APC Record *OR* Super User) 
+
+Replace an existing APC record by its unique id
+
+    PUT /apc/<id>
+    [new apc record]
+
+Returns a 204 if successful, or a 404 if an APC with that ID does not exist
+
+
+### Delete
+
+#### Delete by ID
+
+**AuthNZ**: Authenticated User + (Owner of APC Record *OR* Super User) 
+
+Delete an existing APC record by its unique id
+
+    DELETE /apc/<id>
+
+Returns a 204 if successful, or a 404 if an APC with that ID does not exist
+
+
+
+## Discovery API
+
+This describes an application specific search and discovery API which would be used to build a custom search
+interface, or for third parties to embed a search/query interface or allow them to keep up to date with change to
+the system
+
+### Search
 
 **AuthNZ**: None
 
@@ -158,7 +231,7 @@ search interface which wraps this seems unnecessary.  If there are regular searc
 then we may wish to consider that in the future (e.g. see the Change List below)*
 
 
-#### Change List
+### Change List
 
 **AuthNZ**: None
 
@@ -171,70 +244,11 @@ Returns the results in the format provided by Elasticsearch
 *Note: the change list is a special case of an Elasticsearch query - it will effectively proxy for a time-boxed, ordered
 query against the index, hence the reason that the result set will be Elasticsearch formatted*
 
-### Update
-
-#### Replace an APC record by ID
-
-**AuthNZ**: Authenticated User + (Owner of APC Record *OR* Super User) 
-
-Replace an existing APC record by its unique id
-
-    PUT /apc/<id>
-    [new apc record]
-
-Returns a 204 if successful, or a 404 if an APC with that ID does not exist
-
-#### Update a list of records
-
-**AuthNZ**: Authenticated User + (Owner of all APC Records *OR* Super User) 
-
-Update APCs in bulk (essentially identical to **Add a list of records**)
-
-    POST /list
-    Content-Type: application/json OR text/csv
-    [list of apc objects or csv]
-
-Each record must provide an identifier for the existing record that it replaces.
-
-Mixed create/replace operations can be supported - records which provide an ID will be overwritten, record which do not will create new entries.
-
-Returns 200 if all records can be successfully imported, or a 400 if any of the records could not be imported.
-
-In the event of success the response body contains a list of URLs to the created resources and whether they were creates or updates
-
-*Note: similar comments as appear in "Add a list of records" apply here with regard to having an operation which either clearly
-completes or clearly fails, rather than some in-between state*
-
-
-### Delete
-
-#### Delete by ID
-
-**AuthNZ**: Authenticated User + (Owner of APC Record *OR* Super User) 
-
-Delete an existing APC record by its unique id
-
-    DELETE /apc/<id>
-
-Returns a 204 if successful, or a 404 if an APC with that ID does not exist
-
-#### Delete list of records
-
-**AuthNZ**: Authenticated User + (Owner of all APC Records *OR* Super User) 
-
-Delete a list of records as identified by their unique ids
-
-    DELETE /list/<id1>,<id2>,...
-    
-Returns a 204 if all records can be successfully deleted (and are), or a 404 if any of the records do not exist
-
-*Note: similar comments as appear in "Add a list of records" apply here with regard to having an operation which either clearly
-completes or clearly fails, rather than some in-between state*
 
 ## Analytics API
 
-This section describes a theoretical API endpoint which would provide analytical information which could be used in 
-a variety of reporting use cases.
+This section describes a theoretical, application-specific API endpoint which would provide analytical information which could be used in 
+a variety of reporting use cases.  It will be extended during the process of prototype development.
 
 ### Expenditure Stats
 
