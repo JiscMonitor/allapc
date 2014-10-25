@@ -137,6 +137,10 @@ such as a book.  **Mandatory where applicable**.
 * **rioxxterms:project**  - as per the RIOXX profile this field is **Mandatory**
 * **jm:apc** - this field should not be confused with rioxxterms:apc, which has a different purpose.  In this data model this provides a 
 wrapper for detailed information about APC payments.
+* **jm:apc.amount** and **jm:apc.amount_gbp** - these are the pure costs for the APC, and should not include costs for extras such as page charges 
+or colour charges.  Any additional charges associated with publication should be summed in **jm:apc.additional_costs**.
+* **jm:apc.fund** - this covers information about the fund or source of finance that the APC was paid from.  It could include RCUK, COAF or Institutional funds, and **does not** refer
+ to the original funder of the work (which is covered in **rioxxterms:project**)
 * **jm:apc.currency** - the standard 3 letter currency code
 * **license_ref** - an object based on the OAG and DOAJ licence data formats for recording the type, version and url of a licence that should
 have been applied to this item
