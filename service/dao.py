@@ -1,10 +1,7 @@
-import esprit
-from portality.core import app
+from portality.modules.es import dao
 
-class MyDAO(esprit.dao.DomainObject):
-    __type__ = 'index'
-    __conn__ = esprit.raw.Connection(app.config.get('ELASTIC_SEARCH_HOST'), app.config.get('ELASTIC_SEARCH_INDEX'))
+class InstitutionalRecordDAO(dao.ESDAO):
+    __type__ = 'institutional'
 
-class DOAJJournal(esprit.dao.DomainObject):
-    __type__ = 'journal'
-    __conn__ = esprit.raw.Connection(app.config.get('ELASTIC_SEARCH_HOST'), app.config.get('ELASTIC_SEARCH_INDEX'))
+class APCRecordDAO(dao.ESDAO):
+    __type__ = 'apc'
