@@ -159,12 +159,6 @@ This section details the extended information required by the APC aggregation to
     "last_updated" : "<date the record was last modified>",
     
     "admin" : {
-        "organisation" : {
-            "name" : "<name of the organisation which provided the record>",
-            "identifier" : [
-                {"type" : "<identifier type>", "id" : "<institutional identifier>"}
-            ]
-        }
         "account" : "<user account who provided this record originally>",
         "local_id" : "<identifier supplied by the user for this record>"
     },
@@ -224,7 +218,7 @@ This section defines that mapping.  Note that mappings are to the **Institutiona
 
 | Spreadsheet Field | Data Model Field |
 | ----------------- | ---------------- |
-| Institution | admin.organisation.name and monitor.jm:apc.name |
+| Institution | monitor.jm:apc.name |
 | Date of initial application by author	| monitor.jm:dateApplied |
 | Submitted by | - |
 | University department	| - |
@@ -283,12 +277,14 @@ Create a single Institutional Record:
 
     POST /apc?api_key=<api key>
     Slug: <local id>
+    Content-Type: application/json
     <apc data>
 
 Returns 201, and a Location header with the URL for the created object, plus a JSON response body with the URL for the object:
 
     201 Created
     Location: <URL to retrieve created object>
+    Content-Type: application/json
     
     {
         "status" : 201,
@@ -318,6 +314,9 @@ Returns 200 and the APC record as JSON in the body, or 404 if the record could n
 
 
 #### Individual APC Record via Local ID
+
+**FIXME: doesn't look quite right from a REST point of view, but difficult to see how else to do it such that
+the user doesn't need to remember anything except the local id**
 
 **AuthNZ**: Authenticated User
 

@@ -20,8 +20,9 @@ def static(filename):
 def configure_javascript():
     return javascript_config()
 
-from portality.modules.es.autocomplete import blueprint as autocomplete
-app.register_blueprint(autocomplete, url_prefix='/autocomplete')
+# mount the blueprint for the api itself (which will appear at the root of the url space)
+from service.view.api import blueprint as webapi
+app.register_blueprint(webapi)
 
 @app.errorhandler(404)
 def page_not_found(e):
