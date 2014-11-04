@@ -101,7 +101,7 @@ Where possible top-level keys in the model have been taken from the following me
             ],
             "date_paid" : "<date apc paid>",
             "additional_costs" : <additional apc costs in GBP>,
-            "discounts" : "<description of any discounts applied>",
+            "discounts" : ["<names or identifiers of any discounts applied>"],
             "publication_process_feedback" : ["<notes on the process of publication>"],
             "notes" : "<free text notes on the APC record from this institution>"
         }
@@ -231,7 +231,7 @@ This section defines that mapping.  Note that mappings are to the **Institutiona
 | ISSN | monitor.dc:source.identifier.type="issn" and monitor.dc:source.identifier.id |
 | Type of publication | monitor.rioxxterms:type |
 | Article title | monitor.dc:title |
-| Date of publication | monitor.rioxxterms:publication_date and monitor.license_received.date |
+| Date of publication | monitor.rioxxterms:publication_date and monitor.jm:license_received.date |
 | Fund that APC is paid from (1) | monitor.jm:apc.fund.name |
 | Fund that APC is paid from (2) | monitor.jm:apc.fund.name |
 | Fund that APC is paid from (3) | monitor.jm:apc.fund.name |

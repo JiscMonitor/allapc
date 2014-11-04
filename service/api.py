@@ -20,10 +20,12 @@ class APC_API(object):
         ir.save()
         return ir
 
-    def retrieve(self, apc_id):
+    @classmethod
+    def retrieve(cls, apc_id):
         return models.InstitutionalRecord.pull(apc_id)
 
-    def retrieve_by_local_id(self, local_id, account, **kwargs):
+    @classmethod
+    def retrieve_by_local_id(cls, local_id, account, **kwargs):
         res = models.InstitutionalRecord.find_by_local_id(local_id, account.id)
         if len(res) == 0:
             return None
@@ -33,7 +35,8 @@ class APC_API(object):
             raise RetrieveException("More than one record with that local_id for that account")
         return None
 
-    def replace(self, apc_id, data, account=None, local_id=None, **kwargs):
+    @classmethod
+    def replace(cls, apc_id, data, account=None, local_id=None, **kwargs):
         ir = models.InstitutionalRecord.pull(apc_id)
         if ir is None:
             raise NoSuchRecordException("Could not locate a record with id " + str(apc_id))
@@ -48,7 +51,8 @@ class APC_API(object):
 
         return ir
 
-    def delete(self, apc_id, **kwargs):
+    @classmethod
+    def delete(cls, apc_id, **kwargs):
         ir = models.InstitutionalRecord.pull(apc_id)
         if ir is None:
             raise NoSuchRecordException("Could not locate a record with id " + str(apc_id))
@@ -60,7 +64,7 @@ class APIAuthoriseException(Exception):
 class AuthNZ_APC_API(APC_API):
 
     @classmethod
-    def create(self, data, local_id=None, account=None, **kwargs):
+    def create(cls, data, local_id=None, account=None, **kwargs):
         if account is None:
             raise APIAuthoriseException("Account must be provided to create an object")
 
@@ -68,15 +72,18 @@ class AuthNZ_APC_API(APC_API):
 
         return APC_API.create(data, local_id=local_id, account=account, **kwargs)
 
-    def retrieve(self, apc_id):
+    @classmethod
+    def retrieve(cls, apc_id):
         return APC_API.retrieve(apc_id)
 
-    def retrieve_by_local_id(self, local_id, account, **kwargs):
+    @classmethod
+    def retrieve_by_local_id(cls, local_id, account, **kwargs):
         # FIXME: here is where we implement access controls
 
         return APC_API.retrieve_by_local_id(local_id, account, **kwargs)
 
-    def replace(self, apc_id, data, account=None, local_id=None, **kwargs):
+    @classmethod
+    def replace(cls, apc_id, data, account=None, local_id=None, **kwargs):
         if account is None:
             raise APIAuthoriseException("Account must be provided to replace an object")
 
@@ -84,7 +91,8 @@ class AuthNZ_APC_API(APC_API):
 
         return APC_API.replace(apc_id, data, local_id=local_id, account=account, **kwargs)
 
-    def delete(self, apc_id, account=None, **kwargs):
+    @classmethod
+    def delete(cls, apc_id, account=None, **kwargs):
         if account is None:
             raise APIAuthoriseException("Account must be provided to replace an object")
 

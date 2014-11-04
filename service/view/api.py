@@ -31,8 +31,6 @@ def create():
 
 @blueprint.route('/apc/<apc_id>', methods=["GET", "PUT", "DELETE"])
 def apc(apc_id):
-
-
     if request.method == "GET":
         try:
             ir = AuthNZ_APC_API.retrieve(apc_id)
