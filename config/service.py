@@ -25,3 +25,6 @@ QUERY_ROUTE = {
         }
     }
 }
+
+# query endpoint for the above inst_query for the javascript UI
+CLIENTJS_INST_QUERY_ENDPOINT = "/inst_query"

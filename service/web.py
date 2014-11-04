@@ -3,7 +3,7 @@ from flask import Flask, request, abort, render_template, redirect, make_respons
 from flask.views import View
 
 from octopus.core import app, initialise
-from octopus.lib.webapp import custom_static, javascript_config
+from octopus.lib.webapp import custom_static
 import sys
 
 @app.route("/")
@@ -15,10 +15,8 @@ def root():
 def static(filename):
     return custom_static(filename)
 
-# this allows us to serve our standard javascript config
-@app.route("/javascript/config.js")
-def configure_javascript():
-    return javascript_config()
+from octopus.modules.clientjs.configjs import blueprint as configjs
+app.register_blueprint(configjs)
 
 # mount the blueprint for the api itself (which will appear at the root of the url space)
 from service.view.api import blueprint as webapi

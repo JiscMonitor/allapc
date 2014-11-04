@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 
     /****************************************************************
-     * Application Facetview Theme
+     * ALL APC Facetview Theme
      *****************************
      */
 
@@ -18,9 +18,9 @@ jQuery(document).ready(function($) {
     var facets = []
     facets.push({'field': 'last_updated', 'display': 'Last Updated'})
 
-    $('#facetview').facetview({
+    $('#allapc_facetview').facetview({
         debug: false,
-        search_url : query_endpoint, // defined in the template which calls this
+        search_url : octopus.config.inst_query_endpoint,
         page_size : 25,
         facets : facets,
         search_sortby : [
@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
         searchbox_fieldselect : [
             {'display':'ID','field':'id'}
         ],
-        render_result_record : discoveryRecordView,
+        render_result_record : discoveryRecordView
 
     });
 
