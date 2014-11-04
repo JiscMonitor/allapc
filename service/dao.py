@@ -1,4 +1,4 @@
-from portality.modules.es import dao
+from octopus.modules.es import dao
 
 class InstitutionalRecordDAO(dao.ESDAO):
     __type__ = 'institutional'

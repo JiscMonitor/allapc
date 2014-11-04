@@ -2,8 +2,8 @@ from flask import Flask, request, abort, render_template, redirect, make_respons
     send_from_directory
 from flask.views import View
 
-from portality.core import app, initialise
-from portality.lib.webapp import custom_static, javascript_config
+from octopus.core import app, initialise
+from octopus.lib.webapp import custom_static, javascript_config
 import sys
 
 @app.route("/")
