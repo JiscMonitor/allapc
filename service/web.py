@@ -24,6 +24,9 @@ def configure_javascript():
 from service.view.api import blueprint as webapi
 app.register_blueprint(webapi)
 
+from octopus.modules.es.query import blueprint as query
+app.register_blueprint(query, url_prefix="/inst_query")
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('errors/404.html'), 404
@@ -40,7 +43,7 @@ if __name__ == "__main__":
     if pycharm_debug:
         app.config['DEBUG'] = False
         import pydevd
-        pydevd.settrace(app.config.get('DEBUG_SERVER_HOST', 'localhost'), port=app.config.get('DEBUG_SERVER_PORT', 51234), stdoutToServer=True, stderrToServer=True)
+        pydevd.settrace(app.config.get('DEBUG_SERVER_HOST', 'localhost'), port=app.config.get('DEBUG_SERVER_PORT', 6000), stdoutToServer=True, stderrToServer=True)
         print "STARTED IN REMOTE DEBUG MODE"
 
     app.run(host='0.0.0.0', debug=app.config['DEBUG'], port=app.config['PORT'], threaded=False)

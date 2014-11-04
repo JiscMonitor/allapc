@@ -13,3 +13,15 @@ ELASTIC_SEARCH_MAPPINGS = [
     "service.dao.InstitutionalRecordDAO",
     "service.dao.APCRecordDAO"
 ]
+
+# Query route configuration
+QUERY_ROUTE = {
+    "inst_query" : {                            # the URL route at which it is mounted
+        "institutional" : {                     # the URL name for the index type being queried
+            "auth" : False,                     # whether the route requires authentication
+            "role" : None,                      # if authenticated, what role is required to access the query endpoint
+            "filters" : [],                     # names of the standard filters to apply to the query
+            "dao" : "service.dao.InstitutionalRecordDAO"       # classpath for DAO which accesses the underlying ES index
+        }
+    }
+}
