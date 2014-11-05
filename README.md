@@ -410,6 +410,9 @@ query against the index, hence the reason that the result set will be Elasticsea
 
 ### Funder Perspective
 
+These requirements come from the perspective of a funder who is interested in particular with negotiation with
+publishers over subscription/APC costs.
+
 * Total Expenditure on a particular publisher
     * across the sector
     * for a given group of institutions
@@ -438,6 +441,33 @@ Additional Functional Requirements:
     * monthly
     * annually, with varying start dates
 
+### Institutional Perspective
+
+These requirements are from institutions interested in both their own reporting requirements, and also in the data
+available in an aggregation of all APCs.
+
+Institutional Requirements (unlikely to be addressed by the aggregation)
+
+* Custom reports for funders: RCUK and Wellcome in particular
+* Break-down of finances: APC, Additional Costs, VAT, Overseas Currency Transactions
+* Total expenditure by faculty/department/researcher (e.g. by ORCID)
+* Numbers Published vs Numbers Committed to Pay vs Numbers Paid but not Published
+* Amount paid vs Staff Effort
+
+General Requirements (which may be addressable by the aggregation)
+
+* Gold publications for which Green was possible
+* By Fund (paid from, e.g. COAF/RCUK) by Institution
+* Discount vs Non-Discount cost per publisher per institution
+* Number of APCs paid vs Total Cost per institution
+* Time spent on APCs by institution
+* Green vs Gold across the sector
+* Total Expenditure on individual journals
+* Journal ranking (e.g. by Impact Factor) against average APC costs
+
+Additional Requirements
+
+* Detection of APCs paid by another institution, so that they can be reported as compliant
 
 ## Analytics API
 
