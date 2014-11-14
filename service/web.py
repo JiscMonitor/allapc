@@ -10,6 +10,10 @@ import sys
 def root():
     return render_template("index.html")
 
+@app.route("/report")
+def report():
+    return render_template("report.html")
+
 # this allows us to override the standard static file handling with our own dynamic version
 @app.route("/static/<path:filename>")
 def static(filename):

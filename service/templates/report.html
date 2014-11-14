@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style type="text/css">
+#allapc_total_expenditure {
+    height: 800px;
+    width: 800px;
+}
+#allapc_total_expenditure .reportview {
+    height: 765px;
+}
+</style>
+
+<h1>Expenditure Statistics by Publisher</h1>
+<div class="row-fluid">
+    <div class="span3"><div id="facetview-controls"></div></div>
+    <div class="span9">
+        <div class="facetview_searching" style="display:none"></div>
+        <div id="allapc_total_expenditure"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block extra_js_bottom %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/service.reportview.js') }}"></script>
+{% endblock%}
