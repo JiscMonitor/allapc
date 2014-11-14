@@ -302,11 +302,11 @@ class InstitutionalAPC(object):
             self.data["fund"] = []
         obj = {"name" : name}
         if amount is not None:
-            obj["amount"] = amount
+            obj["amount"] = float(amount)
         if currency is not None:
             obj["currency"] = currency
         if amount_gbp is not None:
-            obj["amount_gbp"] = amount_gbp
+            obj["amount_gbp"] = float(amount_gbp)
         self.data["fund"].append(obj)
 
     @property
@@ -323,7 +323,7 @@ class InstitutionalAPC(object):
 
     @amount.setter
     def amount(self, val):
-        self.data["amount"] = val
+        self.data["amount"] = float(val)
 
     @property
     def currency(self):
@@ -339,7 +339,7 @@ class InstitutionalAPC(object):
 
     @amount_gbp.setter
     def amount_gbp(self, val):
-        self.data["amount_gbp"] = val
+        self.data["amount_gbp"] = float(val)
 
     @property
     def additional_costs(self):
@@ -347,7 +347,7 @@ class InstitutionalAPC(object):
 
     @additional_costs.setter
     def additional_costs(self, val):
-        self.data["additional_costs"] = val
+        self.data["additional_costs"] = float(val)
 
     def add_discount(self, val):
         if "discounts" not in self.data:

@@ -73,13 +73,13 @@ class Row2InstitutionalXwalk(object):
             else: monitor.add_funder(cls._norm(row[19]))
 
         if cls._importable(row[23]): apc.date_paid = cls._norm(row[23])
-        if cls._importable(row[24]): apc.amount = cls._norm(row[24])
+        if cls._importable(row[24]) and cls._float(row[24]) is not None: apc.amount = cls._float(row[24])
         if cls._importable(row[25]): apc.currency = cls._norm(row[25])
-        if cls._importable(row[26]): apc.amount_gbp = cls._norm(row[26])
-        if cls._importable(row[27]): apc.additional_costs = cls._norm(row[27])
+        if cls._importable(row[26]) and cls._float(row[26]) is not None: apc.amount_gbp = cls._float(row[26])
+        if cls._importable(row[27]) and cls._float(row[27]) is not None: apc.additional_costs = cls._float(row[27])
         if cls._importable(row[28]): apc.add_discount(cls._norm(row[28]))
 
-        if cls._importable(row[29]): apc.add_fund("COAF", amount_gbp=cls._norm(row[29]))
+        if cls._importable(row[29]) and cls._float(row[29]) is not None: apc.add_fund("COAF", amount_gbp=cls._float(row[29]))
 
         if cls._importable(row[30]): monitor.set_license(cls._norm(row[30]))
         if cls._importable(row[31]):
@@ -102,6 +102,13 @@ class Row2InstitutionalXwalk(object):
     def _norm(cls, val):
         return val.decode("utf-8", errors="ignore")
 
+    @classmethod
+    def _float(cls, val):
+        try:
+            return float(cls._norm(val))
+        except:
+            return None
+
 def import_csv(path, institution=None):
     with codecs.open(path, "r") as f:
         reader = csv.reader(f)
@@ -110,6 +117,8 @@ def import_csv(path, institution=None):
             if first:
                 first = False
                 continue
+            if len(row) == 33:
+                row = [""] + row
             if institution is not None:
                 row[0] = institution
             ir = Row2InstitutionalXwalk.row2institutional(row)
