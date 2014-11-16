@@ -29,6 +29,9 @@ app.register_blueprint(webapi)
 from octopus.modules.es.query import blueprint as query
 app.register_blueprint(query, url_prefix="/inst_query")
 
+from octopus.modules.es.autocomplete import blueprint as autocomplete
+app.register_blueprint(autocomplete, url_prefix="/autocomplete")
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('errors/404.html'), 404

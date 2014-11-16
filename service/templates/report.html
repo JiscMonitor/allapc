@@ -3,11 +3,19 @@
 {% block content %}
 
 <style type="text/css">
-#allapc_total_expenditure {
+#allapc-total-expenditure {
     height: 800px;
     width: 800px;
 }
-#allapc_total_expenditure .reportview {
+#allapc-total-expenditure .reportview {
+    height: 765px;
+}
+
+#allapc-stats {
+    height: 800px;
+    width: 800px;
+}
+#allapc-stats .reportview {
     height: 765px;
 }
 </style>
@@ -16,8 +24,35 @@
 <div class="row-fluid">
     <div class="span3"><div id="facetview-controls"></div></div>
     <div class="span9">
-        <div class="facetview_searching" style="display:none"></div>
-        <div id="allapc_total_expenditure"></div>
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#" id="show_total"><strong>Total Expenditure</strong></a></li>
+                    <li><a href="#" id="show_stats"><strong>Min, Max, Mean</strong></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="total-expenditure-container">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="allapc-total-expenditure"></div>
+                </div>
+            </div>
+        </div>
+        <div id="stats-container">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="allapc-stats"></div>
+                </div>
+            </div>
+        </div>
+        <div id="loading">
+            <div class="row-fluid">
+                <div class="span12">
+                    <img src="{{url_for('static', filename='images/loading.gif')}}">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
