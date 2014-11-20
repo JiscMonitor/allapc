@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
         var thefacetview = '<div id="facetview">';
 
         // provde the facets a place to go
-        thefacetview += '<div class="row-fluid"><div class="span12"><div id="facetview_filters" style="padding-top:45px;"></div></div></div>'
+        thefacetview += '<div class="row-fluid"><div class="span12"><div id="facetview_filters" style="padding-top:15px;"></div></div></div>'
 
         // insert loading notification
         // thefacetview += '<div class="row-fluid"><div class="span12"><div class="facetview_searching" style="display:none"></div></div></div>'
@@ -39,53 +39,35 @@ jQuery(document).ready(function($) {
             thefacetview += '<div class="row-fluid"><div class="span12"><div class="facetview_debug" style="display:none"><textarea style="width: 95%; height: 150px"></textarea></div></div></div>'
         }
 
+        thefacetview += '<div style="display:none"><a href="#" class="facetview_force_search">refresh</a></div>';
+
         // close off the big container and return
         thefacetview += '</div>';
         return thefacetview
     }
 
-    function customFacetList(options) {
-        /*****************************************
-         * overrides must provide the following classes and ids
-         *
-         * none - no requirements for specific classes and ids
-         *
-         * should (not must) respect the following config
-         *
-         * options.facet[x].hidden - whether the facet should be displayed in the UI or not
-         * options.render_terms_facet - renders a term facet into the list
-         * options.render_range_facet - renders a range facet into the list
-         * options.render_geo_facet - renders a geo distance facet into the list
-         */
-        if (options.facets.length > 0) {
-            var filters = options.facets;
-            var thefilters = '';
+    function customReportViewClosure(height) {
+        function theReportview(options) {
+            /*****************************************
+             * overrides must provide the following classes and ids
+             *
+             * class: reportview - main div in which the reportview functionality goes, which should contain an svg element directly
+             *
+             * Should respect the following configs
+             *
+             * options.debug - is this a debug enabled reportview.  If so, put a debug textarea somewhere
+             */
 
-            // insert our own select2 filter
-            thefilters += "<input type='text' name='publisher' id='ac_publisher' style='width: 100%; margin-bottom: 40px;'>";
-
-            for (var idx = 0; idx < filters.length; idx++) {
-                var facet = filters[idx]
-                // if the facet is hidden do not include it in this list
-                if (facet.hidden) {
-                    continue;
-                }
-
-                var type = facet.type ? facet.type : "terms"
-                if (type === "terms") {
-                    thefilters += options.render_terms_facet(facet, options)
-                } else if (type === "range") {
-                    thefilters += options.render_range_facet(facet, options)
-                } else if (type === "geo_distance") {
-                    thefilters += options.render_geo_facet(facet, options)
-                }
-                // FIXME: statistical facet and terms_stats facet?
-            };
-            return thefilters
-        };
-        return ""
-    };
-
+            // the reportview object to be appended to the page
+            var thereportview = '<div class="reportview" style="height: ' + height + 'px"><svg></svg>'
+            if (options.debug) {
+                thereportview += "<div class='reportview_debug'><textarea style='width: 100%; height: 200px'></textarea></div>"
+            }
+            thereportview += '</div>';
+            return thereportview
+        }
+        return theReportview
+    }
 
     var hideDetails = {};
     function hideOffScreen(selector) {
@@ -103,20 +85,21 @@ jQuery(document).ready(function($) {
 
     function updateReport(options, context) {
         var fvfilters = getFilters({"options" : options});
+        var filters = []
+        if (fvfilters && fvfilters.length > 0) {
+            filters = filters.concat(fvfilters)
+        }
 
-        // first bind select2 to the publisher autocomplete
-        octopus.esac.bindTermAutocomplete({
-            selector : "#ac_publisher",
-            minimumInputLength : 3,
-            placeholder :"Choose publishers to display",
-            type : "publisher",
-            allow_clear : true,
-            multiple: true
-        });
+        // get the filters from the publisher autocomplete box
+        var vals = $("#ac_publisher").select2("val");
+        if (vals.length > 0) {
+            var orfilter = {"terms" : {"monitor.dcterms:publisher.name.exact" : vals}};
+            filters.push(orfilter);
+        }
 
         $("#ac_publisher").change(function(event) {
-            alert("oi");
-        })
+            $(".facetview_force_search").trigger("click");
+        });
 
         function statsSeries(options, facet) {
             var min_series = {"key" : "Minimum (£)", "values" : []};
@@ -149,6 +132,17 @@ jQuery(document).ready(function($) {
             startWith = "#stats-container";
         }
 
+        // calculate the new graph heights
+        var fixed_aspects = 70;
+        var report_height = 700;
+        if (vals.length > 0) {
+            report_height = 60 * vals.length + fixed_aspects;
+        }
+        var container_height = report_height + 50;
+
+        $("#allapc-total-expenditure").css("height", container_height + "px");
+        $("#allapc-stats").css("height", container_height + "px");
+
         $('#allapc-total-expenditure').empty();
         $('#allapc-total-expenditure').report({
             type: 'horizontal_multibar',
@@ -164,7 +158,8 @@ jQuery(document).ready(function($) {
                     "display" : "Total Expenditure (£)"
                 }
             ],
-            fixed_filters: fvfilters
+            fixed_filters: filters,
+            render_the_reportview: customReportViewClosure(report_height)
         });
 
 
@@ -182,7 +177,8 @@ jQuery(document).ready(function($) {
                     "display" : "Publisher"
                 }
             ],
-            fixed_filters: fvfilters
+            fixed_filters: filters,
+            render_the_reportview: customReportViewClosure(report_height)
         });
 
         $("#loading").hide();
@@ -209,7 +205,7 @@ jQuery(document).ready(function($) {
         ],
         pushstate: false,
         render_the_facetview: customFrame,
-        render_facet_list: customFacetList,
+        // render_facet_list: customFacetList,
         post_render_callback: updateReport
     });
 
@@ -227,5 +223,15 @@ jQuery(document).ready(function($) {
         bringIn("#total-expenditure-container");
         $(this).parent().addClass("active");
         $("#show_stats").parent().removeClass("active");
+    });
+
+    // first bind select2 to the publisher autocomplete
+    octopus.esac.bindTermAutocomplete({
+        selector : "#ac_publisher",
+        minimumInputLength : 3,
+        placeholder :"Choose publishers to display",
+        type : "publisher",
+        allow_clear : true,
+        multiple: true
     });
 });
