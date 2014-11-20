@@ -105,12 +105,11 @@ jQuery(document).ready(function($) {
         var fvfilters = getFilters({"options" : options});
 
         // first bind select2 to the publisher autocomplete
-        octopus.esac.bindCompoundAutocomplete({
+        octopus.esac.bindTermAutocomplete({
             selector : "#ac_publisher",
             minimumInputLength : 3,
             placeholder :"Choose publishers to display",
             type : "publisher",
-            format : function(result) { return {id : result.publisher, text: result.publisher} },
             allow_clear : true,
             multiple: true
         });
