@@ -126,7 +126,7 @@ jQuery(document).ready(function($) {
         var fixed_aspects = 70;
         var num = 10;
         if (vals.length > 0) { num = vals.length }
-        var report_height = 40 * num + fixed_aspects;
+        var report_height = 50 * num + fixed_aspects;
         var container_height = report_height + 50;
 
         $("#allapc-total-expenditure").css("height", container_height + "px");
