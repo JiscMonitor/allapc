@@ -50,17 +50,30 @@ AUTOCOMPLETE_COMPOUND = {
 }
 
 AUTOCOMPLETE_TERM = {
-    "publisher" : {                                  # name of the autocomplete, as represented in the URL (have as many of these sections as you need)
-        "filter" : {                            # The filter to apply to the result set
-            "monitor.dcterms:publisher.name.exact" : {                    # field on which to apply the filter
-                "start_wildcard" : True,        # apply start wildcard
-                "end_wildcard" : True          # apply end wildcard
+    "publisher" : {
+        "filter" : {
+            "monitor.dcterms:publisher.name.exact" : {
+                "start_wildcard" : True,
+                "end_wildcard" : True
             }
         },
-        "facet" : "monitor.dcterms:publisher.name.exact",                 # facet from which to get our results
-        "input_filter" : lambda x : x,          # function to apply to an incoming string before being applied to the es query
-        "default_size" : 10,                    # if no size param is specified, this is how big to make the response
-        "max_size" : 25,                        # if a size param is specified, this is the limit above which it won't go
-        "dao" : "service.dao.InstitutionalRecordDAO"             # classpath for DAO which accesses the underlying ES index
+        "facet" : "monitor.dcterms:publisher.name.exact",
+        "input_filter" : lambda x : x,
+        "default_size" : 10,
+        "max_size" : 25,
+        "dao" : "service.dao.InstitutionalRecordDAO"
+    },
+    "institution" : {
+        "filter" : {
+            "monitor.jm:apc.name.exact" : {
+                "start_wildcard" : True,
+                "end_wildcard" : True
+            }
+        },
+        "facet" : "monitor.jm:apc.name.exact",
+        "input_filter" : lambda x : x,
+        "default_size" : 10,
+        "max_size" : 25,
+        "dao" : "service.dao.InstitutionalRecordDAO"
     }
 }

@@ -29,10 +29,10 @@
 }
 </style>
 
-<h1 style="margin-bottom: 30px">Expenditure Statistics by Publisher</h1>
+<h1 style="margin-bottom: 30px">Expenditure Statistics by Institution</h1>
 <div class="row-fluid">
     <div class="span3">
-        <input type='text' name='publisher' id='ac_publisher' style='width: 100%; padding-top: 45px;'>
+        <input type='text' name='institution' id='ac_institution' style='width: 100%; padding-top: 45px;'>
         <div id="facetview-controls"></div>
     </div>
     <div class="span9">
@@ -80,5 +80,5 @@
 
 
 {% block extra_js_bottom %}
-<script type="text/javascript" src="{{ url_for('static', filename='js/service.reportview.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/institution.reportview.js') }}"></script>
 {% endblock%}

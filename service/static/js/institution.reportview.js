@@ -77,14 +77,14 @@ jQuery(document).ready(function($) {
         }
 
         // get the filters from the publisher autocomplete box
-        var vals = $("#ac_publisher").select2("val");
+        var vals = $("#ac_institution").select2("val");
         if (vals.length > 0) {
-            var orfilter = {"terms" : {"monitor.dcterms:publisher.name.exact" : vals}};
+            var orfilter = {"terms" : {"monitor.jm:apc.name.exact" : vals}};
             filters.push(orfilter);
         }
 
-        $("#ac_publisher").unbind("change");
-        $("#ac_publisher").change(function(event) {
+        // $("#ac_institution").unbind("change");
+        $("#ac_institution").change(function(event) {
             $(".facetview_force_search").trigger("click");
         });
 
@@ -126,7 +126,7 @@ jQuery(document).ready(function($) {
         var fixed_aspects = 70;
         var num = 10;
         if (vals.length > 0) { num = vals.length }
-        var report_height = 40 * num + fixed_aspects;
+        var report_height = 50 * num + fixed_aspects;
         var container_height = report_height + 50;
 
         $("#allapc-total-expenditure").css("height", container_height + "px");
@@ -140,7 +140,7 @@ jQuery(document).ready(function($) {
             facets : [
                 {
                     "type" : "terms",
-                    "field" : "monitor.dcterms:publisher.name.exact",
+                    "field" : "monitor.jm:apc.name.exact",
                     "size" : 10,
                     "display" : "Number of APCs paid"
                 }
@@ -158,7 +158,7 @@ jQuery(document).ready(function($) {
                     "type" : "terms_stats",
                     "facet_value_field" : "total",
                     // "series_function": statsSeries,
-                    "field" : "monitor.dcterms:publisher.name.exact",
+                    "field" : "monitor.jm:apc.name.exact",
                     "value_field" : "monitor.jm:apc.amount_gbp",
                     "size" : 10,
                     "display" : "Total Expenditure (£)"
@@ -177,10 +177,10 @@ jQuery(document).ready(function($) {
                 {
                     "type" : "terms_stats",
                     "series_function": statsSeries,
-                    "field" : "monitor.dcterms:publisher.name.exact",
+                    "field" : "monitor.jm:apc.name.exact",
                     "value_field" : "monitor.jm:apc.amount_gbp",
                     "size" : 10,
-                    "display" : "Publisher"
+                    "display" : "Institution"
                 }
             ],
             fixed_filters: filters,
@@ -197,8 +197,8 @@ jQuery(document).ready(function($) {
         page_size: 0,
         facets : [
             {
-                "field" : "monitor.jm:apc.name.exact",
-                "display" : "Limit by Institution",
+                "field" : "monitor.dcterms:publisher.name.exact",
+                "display" : "Limit by Publisher",
                 "open" : true,
                 "size" : 15
             }
@@ -241,10 +241,10 @@ jQuery(document).ready(function($) {
 
     // first bind select2 to the publisher autocomplete
     octopus.esac.bindTermAutocomplete({
-        selector : "#ac_publisher",
+        selector : "#ac_institution",
         minimumInputLength : 3,
-        placeholder :"Choose publishers to display",
-        type : "publisher",
+        placeholder :"Choose institutions to display",
+        type : "institution",
         allow_clear : true,
         multiple: true
     });
