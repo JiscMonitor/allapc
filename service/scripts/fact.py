@@ -39,11 +39,17 @@ report = {
     "saved" : 0,
     "skipped" : 0,
     "nomatch" : 0,
-    "nofunder" : 0
+    "nofunder" : 0,
+    "unnecessary" : 0
 }
 i = 0
-for ir in models.InstitutionalRecord.scroll(keepalive="5m", page_size=100, limit=10):
+for ir in models.InstitutionalRecord.scroll(keepalive="1000m", page_size=100):
     i += 1
+
+    if ir.green_option is not None and ir.green_option != "":
+        print i, "unnecessary, already done", ir.id
+        report["unnecessary"] += 1
+        continue
 
     # get the fields to use
     funder_names = [f.get("name") for f in ir.monitor.funder if f.get("name") is not None]

@@ -10,9 +10,21 @@ import sys
 def root():
     return render_template("index.html")
 
-@app.route("/report")
-def report():
-    return render_template("report.html")
+@app.route("/search")
+def search():
+    return render_template("search.html")
+
+@app.route("/report/publisher")
+def publisher():
+    return render_template("publisher.html")
+
+@app.route("/report/institution")
+def institution():
+    return render_template("institution.html")
+
+@app.route("/report/goldgreen")
+def goldgreen():
+    return render_template("goldgreen.html")
 
 # this allows us to override the standard static file handling with our own dynamic version
 @app.route("/static/<path:filename>")
