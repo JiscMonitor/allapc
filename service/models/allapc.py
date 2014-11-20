@@ -280,6 +280,10 @@ class Monitor(object):
             obj["grant_number"] = grant_number
         self.data["rioxxterms:project"].append(obj)
 
+    @property
+    def funder(self):
+        return self.data.get("rioxxterms:project", [])
+
     def set_license(self, title, type=None, url=None, version=None):
         obj = {"title" : title}
         if type is not None:
@@ -404,6 +408,16 @@ class InstitutionalRecord(dao.InstitutionalRecordDAO):
         if "admin" not in self.data:
             self.data["admin"] = {}
         self.data["admin"]["account"] = val
+
+    @property
+    def green_option(self):
+        return self.data.get("index", {}).get("green_option")
+
+    @green_option.setter
+    def green_option(self, val):
+        if "index" not in self.data:
+            self.data["index"] = {}
+        self.data["index"]["green_option"] = val;
 
 class APCRecord(dao.APCRecordDAO):
     pass
