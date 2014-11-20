@@ -124,6 +124,9 @@ class Monitor(object):
         self.data["jm:apc"].append(obj)
         return InstitutionalAPC(obj)
 
+    def has_apcs_for(self):
+        return [apc.get("name") for apc in self.data.get("jm:apc")]
+
     @property
     def date_applied(self):
         return self.data.get("jm:dateApplied")
@@ -312,6 +315,14 @@ class InstitutionalAPC(object):
         if amount_gbp is not None:
             obj["amount_gbp"] = float(amount_gbp)
         self.data["fund"].append(obj)
+
+    @property
+    def name(self):
+        return self.data.get("name")
+
+    @name.setter
+    def name(self, val):
+        self.data["name"] = val
 
     @property
     def date_paid(self):
