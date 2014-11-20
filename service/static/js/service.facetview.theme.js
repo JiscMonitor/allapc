@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
         var monitor = record["monitor"];
 
         var issn = "";
-        if (monitor["dc:source"]["identifier"]) {
+        if (monitor["dc:source"].hasOwnProperty("identifier")) {
             issn = " (ISSN:" + monitor["dc:source"]["identifier"][0]["id"] + ")";
         }
 
