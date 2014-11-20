@@ -63,14 +63,22 @@ class Row2InstitutionalXwalk(object):
         if cls._importable(row[16]): apc.add_fund(cls._norm(row[16]))
 
         if cls._importable(row[17]):
-            if cls._importable(row[20]): monitor.add_funder(cls._norm(row[17]), cls._norm(row[20]))
-            else: monitor.add_funder(cls._norm(row[17]))
+            fs = cls._separate(row[17])
+            for funder in fs:
+                if cls._importable(row[20]):
+                    monitor.add_funder(funder, cls._norm(row[20]))
+                else:
+                    monitor.add_funder(funder)
         if cls._importable(row[18]):
-            if cls._importable(row[21]): monitor.add_funder(cls._norm(row[18]), cls._norm(row[21]))
-            else: monitor.add_funder(cls._norm(row[18]))
+            fs = cls._separate(row[18])
+            for funder in fs:
+                if cls._importable(row[21]): monitor.add_funder(funder, cls._norm(row[21]))
+                else: monitor.add_funder(funder)
         if cls._importable(row[19]):
-            if cls._importable(row[22]): monitor.add_funder(cls._norm(row[19]), cls._norm(row[22]))
-            else: monitor.add_funder(cls._norm(row[19]))
+            fs = cls._separate(row[19])
+            for funder in fs:
+                if cls._importable(row[22]): monitor.add_funder(funder, cls._norm(row[22]))
+                else: monitor.add_funder(funder)
 
         if cls._importable(row[23]): apc.date_paid = cls._norm(row[23])
         if cls._importable(row[24]) and cls._float(row[24]) is not None: apc.amount = cls._float(row[24])
@@ -95,12 +103,24 @@ class Row2InstitutionalXwalk(object):
         return ir
 
     @classmethod
+    def _separate(cls, val):
+        f = cls._norm(val)
+        if "," in f:
+            fs = [x.strip() for x in f.split(",")]
+            return fs
+        elif ";" in f:
+            fs = [x.strip() for x in f.split(";")]
+            return fs
+        return [f]
+
+
+    @classmethod
     def _importable(cls, val):
         return val is not None and val != ""
 
     @classmethod
     def _norm(cls, val):
-        return val.decode("utf-8", errors="ignore")
+        return val.decode("utf-8", errors="ignore").strip()
 
     @classmethod
     def _float(cls, val):
