@@ -123,25 +123,44 @@ jQuery(document).ready(function($) {
         }
 
         // hide the graphs while we re-render them
+        hideOffScreen("#apc-count-container");
         hideOffScreen("#total-expenditure-container");
         hideOffScreen("#stats-container");
 
         // determine which graph we will bring back in
-        var startWith = "#total-expenditure-container";
-        if ($("#show_stats").parent().hasClass("active")) {
+        var startWith = "#apc-count-container";
+        if ($("#show_total").parent().hasClass("active")) {
+            startWith = "#total-expenditure-container";
+        } else if ($("#show_stats").parent().hasClass("active")) {
             startWith = "#stats-container";
         }
 
         // calculate the new graph heights
         var fixed_aspects = 70;
-        var report_height = 700;
-        if (vals.length > 0) {
-            report_height = 60 * vals.length + fixed_aspects;
-        }
+        var num = 10;
+        if (vals.length > 0) { num = vals.length }
+        var report_height = 40 * num + fixed_aspects;
         var container_height = report_height + 50;
 
         $("#allapc-total-expenditure").css("height", container_height + "px");
         $("#allapc-stats").css("height", container_height + "px");
+        $("#apc-count").css("height", container_height + "px");
+
+        $('#apc-count').empty();
+        $('#apc-count').report({
+            type: 'horizontal_multibar',
+            search_url: octopus.config.inst_query_endpoint,
+            facets : [
+                {
+                    "type" : "terms",
+                    "field" : "monitor.dcterms:publisher.name.exact",
+                    "size" : 10,
+                    "display" : "Number of APCs paid"
+                }
+            ],
+            fixed_filters: filters,
+            render_the_reportview: customReportViewClosure(report_height)
+        });
 
         $('#allapc-total-expenditure').empty();
         $('#allapc-total-expenditure').report({
@@ -209,20 +228,34 @@ jQuery(document).ready(function($) {
         post_render_callback: updateReport
     });
 
+    $("#show_count").click(function(event) {
+        event.preventDefault();
+        hideOffScreen("#stats-container");
+        hideOffScreen("#total-expenditure-container");
+        bringIn("#apc-count-container");
+        $(this).parent().addClass("active");
+        $("#show_stats").parent().removeClass("active");
+        $("#show_total").parent().removeClass("active");
+    });
+
     $("#show_stats").click(function(event) {
         event.preventDefault();
         hideOffScreen("#total-expenditure-container");
+        hideOffScreen("#apc-count-container");
         bringIn("#stats-container");
         $(this).parent().addClass("active");
         $("#show_total").parent().removeClass("active");
+        $("#show_count").parent().removeClass("active");
     });
 
     $("#show_total").click(function(event) {
         event.preventDefault();
         hideOffScreen("#stats-container");
+        hideOffScreen("#apc-count-container");
         bringIn("#total-expenditure-container");
         $(this).parent().addClass("active");
         $("#show_stats").parent().removeClass("active");
+        $("#show_count").parent().removeClass("active");
     });
 
     // first bind select2 to the publisher autocomplete
