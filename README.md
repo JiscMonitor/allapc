@@ -6,7 +6,7 @@ An APC demonstrator collection/dissemination API, and reports based on the data 
 
 Clone the project:
 
-    git clone https://github.com/CottageLabs/allapc
+    git clone https://github.com/JiscMonitor/allapc
 
 get all the submodules
 
@@ -51,6 +51,12 @@ Then, start your app with
 
     python service/web.py
 
+### Importing data
+
+You can import data directly from the TCO spreadsheets with
+
+    python service/scripts/importcsv.py -s "source/spreadsheet.csv", -i "Institution Name"
+    
 
 ## Data Model
 
