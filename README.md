@@ -56,7 +56,7 @@ Then, start your app with
 You can import data directly from the TCO spreadsheets with
 
     python service/scripts/importcsv.py -s "source/spreadsheet.csv", -i "Institution Name"
-    
+
 
 ## Data Model
 
