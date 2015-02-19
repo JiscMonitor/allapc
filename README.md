@@ -88,7 +88,8 @@ Where possible top-level keys in the model have been taken from the following me
         "rioxxterms": "http://rioxx.net/v2-0-beta-1/"
     }
     
-    "jm:dateApplied" : "<date APC was applied for by author>",
+    "jm:dateApplied" : "<date APC was initially applied for by author>",
+    "rioxxterms:publication_date" : "<publication date>",
     
     "dc:identifier" : [
         {"type" : "pmcid", "id" : "<europe pubmed central id>"},
@@ -126,7 +127,6 @@ Where possible top-level keys in the model have been taken from the following me
     
     "rioxxterms:type" : "<publication type>",
     "dc:title" : "<title>",
-    "rioxxterms:publication_date" : "<publication date>",
     
     "rioxxterms:project" : [
         {

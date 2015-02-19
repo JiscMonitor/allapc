@@ -2,6 +2,7 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
 
+    parser.add_argument("-d", "--dir", help="path to directory to import")
     parser.add_argument("-s", "--source", help="path to source csv to import")
     parser.add_argument("-i", "--institution", help="name of institution to import as (will override the csv value if present)")
 
@@ -15,5 +16,5 @@ if __name__ == "__main__":
     initialise()
 
     from service import importer
-    importer.import_csv(args.source, args.institution)
+    importer.do_import(args.source, args.institution)
 

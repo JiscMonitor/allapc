@@ -1,1 +1,1 @@
-from service.models.allapc import InstitutionalRecord, APCRecord, Monitor
+from service.models.dobs import InstitutionalRecord, APCRecord, Monitor

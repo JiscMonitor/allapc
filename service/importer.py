@@ -143,3 +143,14 @@ def import_csv(path, institution=None):
                 row[0] = institution
             ir = Row2InstitutionalXwalk.row2institutional(row)
             ir.save()
+
+from service.sheets import APCSheet
+from service.institutional import Sheet2Institutional
+
+def do_import(csv_path, institution=None):
+    sheet = APCSheet(csv_path)
+    for obj in sheet.objects():
+        if institution is not None:
+            obj["institution"] = institution
+            ir = Sheet2Institutional.sheet2institutional(obj)
+            ir.save()
