@@ -45,7 +45,7 @@ class TestModels(testindex.ESTestCase):
         assert apc.funds[0]["currency"] == "ALL"
         assert apc.funds[0]["amount_gbp"] == 10.0
         assert apc.name == "University of Test"
-        assert apc.date_paid == "2015-01-01"
+        assert apc.date_paid == "2015-01-01T00:00:00Z"
         assert apc.amount == 100.0
         assert apc.currency == "ALL"
         assert apc.amount_gbp == 10.0
@@ -74,7 +74,7 @@ class TestModels(testindex.ESTestCase):
 
         assert len(monitor.has_apcs_for()) == 1
         assert "University of Test" in monitor.has_apcs_for()
-        assert monitor.date_applied == "2014-01-01"
+        assert monitor.date_applied == "2014-01-01T00:00:00Z"
         assert monitor.get_unique_identifier("something") == "S1234"
         assert monitor.pmcid == "PMC1234"
         assert monitor.pmid == "1234"
@@ -86,7 +86,10 @@ class TestModels(testindex.ESTestCase):
         assert monitor.issn == "1234-5678"
         assert monitor.publication_type == "journal"
         assert monitor.title == "The Title"
-        assert monitor.publication_date == "2016-01-01"
+        assert monitor.publication_date == "2016-01-01T00:00:00Z"
+        assert len(monitor.received_license) == 1
+        assert monitor.received_license[0]["date"] == "2016-01-01T00:00:00Z"
+        assert monitor.received_license[0]["received"] is True
         assert len(monitor.funder) == 1
         assert monitor.funder[0]["name"] == "BBSRC"
         assert monitor.funder[0]["grant_number"] == "B/123/4"

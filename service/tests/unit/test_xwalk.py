@@ -35,7 +35,7 @@ class TestXwalk(testindex.ESTestCase):
                 assert f["amount_gbp"] == 40.0
 
         assert apc.name == "University of Test"
-        assert apc.date_paid == "01/01/14"
+        assert apc.date_paid == "2014-01-01T00:00:00Z" # "01/01/14"
         assert apc.amount == 100.0
         assert apc.currency == "ALL"
         assert apc.amount_gbp == 10.0
@@ -47,7 +47,7 @@ class TestXwalk(testindex.ESTestCase):
 
         assert len(monitor.has_apcs_for()) == 1
         assert "University of Test" in monitor.has_apcs_for()
-        assert monitor.date_applied == "05/04/2013"
+        assert monitor.date_applied == "2013-04-05T00:00:00Z" # "05/04/2013"
         assert monitor.pmcid == "PMC1234"
         assert monitor.pmid == "1234"
         assert monitor.doi == "10.1234"
@@ -58,7 +58,7 @@ class TestXwalk(testindex.ESTestCase):
         assert monitor.issn == "1234-5678"
         assert monitor.publication_type == "journal"
         assert monitor.title == "The Title"
-        assert monitor.publication_date == "01/01/16"
+        assert monitor.publication_date == "2016-01-01T00:00:00Z" # "01/01/16"
         assert len(monitor.funder) == 3
 
         fs = [f["name"] for f in monitor.funder]

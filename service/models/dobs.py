@@ -127,13 +127,11 @@ class Monitor(dataobj.DataObj):
 
     @property
     def date_applied(self):
-        # FIXME: at some point this needs to become an actual date
-        return self._get_single("jm:dateApplied", coerce=self._utf8_unicode())
+        return self._get_single("jm:dateApplied", coerce=self._date_str())
 
     @date_applied.setter
     def date_applied(self, val):
-        # FIXME: at some point this needs to become an actual date
-        self._set_single("jm:dateApplied", val, coerce=self._utf8_unicode(), allow_none=False, ignore_none=True)
+        self._set_single("jm:dateApplied", val, coerce=self._date_str(), allow_none=False, ignore_none=True)
 
     def add_identifier(self, type, val, unique_type=True):
         if type is None or val is None:
@@ -252,19 +250,23 @@ class Monitor(dataobj.DataObj):
 
     @property
     def publication_date(self):
-        return self._get_single("rioxxterms:publication_date", coerce=self._utf8_unicode())
+        return self._get_single("rioxxterms:publication_date", coerce=self._date_str())
 
     @publication_date.setter
     def publication_date(self, val):
-        self._set_single("rioxxterms:publication_date", val, coerce=self._utf8_unicode(), allow_none=False, ignore_none=True)
+        self._set_single("rioxxterms:publication_date", val, coerce=self._date_str(), allow_none=False, ignore_none=True)
+
+    @property
+    def received_license(self):
+        return self._get_list("jm:license_received")
 
     def license_received(self, date, received):
         if date is None or received is None:
             return
 
         # FIXME: date should be handled as a date at some point
-        uc = self._utf8_unicode()
-        date = self._coerce(date, uc)
+        ds = self._date_str()
+        date = self._coerce(date, ds)
         self._add_to_list("jm:license_received", {"date" : date, "received" : bool(received)})
 
     def add_funder(self, name, grant_number=None):
@@ -340,13 +342,11 @@ class InstitutionalAPC(dataobj.DataObj):
 
     @property
     def date_paid(self):
-        # FIXME: needs to be treated like a date at some point
-        return self._get_single("date_paid", coerce=self._utf8_unicode())
+        return self._get_single("date_paid", coerce=self._date_str())
 
     @date_paid.setter
     def date_paid(self, val):
-        # FIXME: needs to be treated like a date at some point
-        self._set_single("date_paid", val, coerce=self._utf8_unicode(), allow_none=False, ignore_none=True)
+        self._set_single("date_paid", val, coerce=self._date_str(), allow_none=False, ignore_none=True)
 
     @property
     def amount(self):
