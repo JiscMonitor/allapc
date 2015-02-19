@@ -1,4 +1,6 @@
 from service import models
+from octopus.lib.dataobj import DataSchemaException
+from octopus.core import app
 
 class Sheet2Institutional(object):
 
@@ -10,21 +12,47 @@ class Sheet2Institutional(object):
         apc = monitor.apc_for(sheet_obj.get("institution"))
 
         # now crosswalk all the values
-        apc.additional_costs = sheet_obj.get("additional_costs")
+        try:
+            apc.additional_costs = sheet_obj.get("additional_costs")
+        except DataSchemaException:
+            # the amount is not convertable to a float
+            app.logger.info(u"Additional costs could not be parsed: {x}".format(x=sheet_obj.get("additional_costs")))
+
         monitor.add_author(sheet_obj.get("affiliated_author"))
 
         if sheet_obj.get("amount") is None and sheet_obj.get("amount_gbp") is not None:
-            apc.amount = sheet_obj.get("amount_gbp")
+            try:
+                apc.amount = sheet_obj.get("amount_gbp")
+            except DataSchemaException:
+                # the amount is not convertable to a float
+                app.logger.info(u"Amount (GBP) could not be parsed: {x}".format(x=sheet_obj.get("amount_gbp")))
             apc.currency = "GBP"
         else:
-            apc.amount = sheet_obj.get("amount")
+            try:
+                apc.amount = sheet_obj.get("amount")
+            except DataSchemaException:
+                # the amount is not convertable to a float
+                app.logger.info(u"Amount (native currency) could not be parsed: {x}".format(x=sheet_obj.get("amount")))
             apc.currency = sheet_obj.get("currency")
 
-        apc.amount_gbp = sheet_obj.get("amount_gbp")
-        apc.date_paid = sheet_obj.get("apc_payment_date")
+        try:
+            apc.amount_gbp = sheet_obj.get("amount_gbp")
+        except DataSchemaException:
+            # the amount is not convertable to a float
+            app.logger.info(u"Amount (GBP) could not be parsed: {x}".format(x=sheet_obj.get("amount_gbp")))
+
+        try:
+            apc.date_paid = sheet_obj.get("apc_payment_date")
+        except DataSchemaException:
+            # the date we were given was broken
+            app.logger.info(u"APC payment date could not be parsed: {x}".format(x=sheet_obj.get("apc_payment_date")))
 
         if sheet_obj.get("coaf") is not None:
-            apc.add_fund("COAF", amount_gbp=sheet_obj.get("coaf"))
+            try:
+                apc.add_fund("COAF", amount_gbp=sheet_obj.get("coaf"))
+            except DataSchemaException:
+                # the float we were given was broken
+                app.logger.info(u"COAF contribution amount could not be parsed: {x}".format(x=sheet_obj.get("coaf")))
 
         apc.add_discount(sheet_obj.get("discounts"))
         monitor.doi = sheet_obj.get("doi")
@@ -50,19 +78,34 @@ class Sheet2Institutional(object):
         for f in fs:
             monitor.add_funder(f, sheet_obj.get("grant_number_3"))
 
-        monitor.date_applied = sheet_obj.get("initial_application_date")
+        try:
+            monitor.date_applied = sheet_obj.get("initial_application_date")
+        except DataSchemaException:
+            # the date we were given was broken
+            app.logger.info(u"Initial application date could not be parsed: {x}".format(x=sheet_obj.get("initial_application_date")))
+
         monitor.issn = sheet_obj.get("issn")
         monitor.set_license(sheet_obj.get("licence"))
 
         lr = sheet_obj.get("licence_received")
         if lr is not None:
             lr = lr.lower().strip() == "yes"
-        monitor.license_received(sheet_obj.get("publication_date"), lr)
+        try:
+            monitor.license_received(sheet_obj.get("publication_date"), lr)
+        except DataSchemaException:
+            # the date we were given was broken
+            app.logger.info(u"Publication date could not be parsed: {x}".format(x=sheet_obj.get("publication_date")))
 
         apc.notes = sheet_obj.get("notes")
         monitor.pmcid = sheet_obj.get("pmcid")
         monitor.pmid = sheet_obj.get("pmid")
-        monitor.publication_date = sheet_obj.get("publication_date")
+
+        try:
+            monitor.publication_date = sheet_obj.get("publication_date")
+        except DataSchemaException:
+            # the date we were given was broken
+            app.logger.info(u"Publication date could not be parsed: {x}".format(x=sheet_obj.get("publication_date")))
+
         apc.publication_process_feedback = sheet_obj.get("publication_process_feedback")
         monitor.publisher = sheet_obj.get("publisher")
         monitor.source = sheet_obj.get("source")

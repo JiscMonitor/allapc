@@ -1,3 +1,6 @@
+#!/bin/sh
+
+# original RCUK batch
 python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/RCUK Royal Holloway.csv" -i "Royal Holloway"
 python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/RCUK University of Leeds.csv" -i "University of Leeds"
 python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/RCUK Durham University.csv" -i "Durham University"
@@ -11,3 +14,27 @@ python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monit
 python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/RCUK University of St Andrews.csv" -i "University of St Andrews"
 python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/RCUK Queens University Belfast.csv" -i "Queens University Belfast"
 python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/RCUK University of Edinburgh.csv" -i "University of Edinburgh"
+
+# New APC batch
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2013-Sheffield.csv" -i "University of Sheffield"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Bangor.csv" -i "University of Bangor"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Bath.csv" -i "University of Bath"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Birmingham.csv" -i "University of Birmingham"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Bristol.csv" -i "University of Bristol"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Cranfield.csv" -i "Cranfield University"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Durham.csv" -i "Durham University"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Glasgow.csv" -i "University of Glasgow"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Imperial.csv" -i "Imperial College London"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Lancaster.csv" -i "University of Lancaster"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Leicester.csv" -i "University of Leicester"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Plymouth.csv" -i "University of Plymouth"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-QueenMary-public.csv" -i "QMU"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-RoyalHolloway.csv" -i "Royal Holloway"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Sheffield.csv" -i "University of Sheffield"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Sussex.csv" -i "University of Sussex"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Swansea.csv" -i "University of Swansea"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-UCL.csv" -i "UCL"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-2014-Warwick.csv" -i "University of Warwick"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-Bristol-1August-9December-2014.csv" -i "University of Bristol"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-Cardiff-Nov2014.csv" -i "University of Cardiff"
+python service/scripts/importcsv.py -s "/home/richard/Dropbox/Documents/OA Monitor/apcdata/APC-data-collection-Manchester-20141223.csv" -i "University of Manchester"

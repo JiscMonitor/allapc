@@ -314,13 +314,13 @@ class InstitutionalAPC(dataobj.DataObj):
 
         uc = self._utf8_unicode()
         flc = self._float()
-        obj = {"name" : uc(name)}
+        obj = {"name" : self._coerce(name, uc)}
         if amount is not None:
-            obj["amount"] = flc(amount)
+            obj["amount"] = self._coerce(amount, flc)
         if currency is not None:
-            obj["currency"] = uc(currency)
+            obj["currency"] = self._coerce(currency, uc)
         if amount_gbp is not None:
-            obj["amount_gbp"] = flc(amount_gbp)
+            obj["amount_gbp"] = self._coerce(amount_gbp, flc)
         self._add_to_list("fund", obj)
 
     @property

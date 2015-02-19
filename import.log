@@ -1,0 +1,1199 @@
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution Royal Holloway
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+8 records imported for Royal Holloway
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Leeds
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+166 records imported for University of Leeds
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution Durham University
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+73 records imported for Durham University
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution Swansea University
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+57 records imported for Swansea University
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Manchester
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+575 records imported for University of Manchester
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution Lancaster University
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+53 records imported for Lancaster University
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution UCL
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+1014 records imported for UCL
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Southampton
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+350 records imported for University of Southampton
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution LSE
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+47 records imported for LSE
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Bristol
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+218 records imported for University of Bristol
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of St Andrews
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: n/a
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:28]:
+Amount (GBP) could not be parsed: unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: n/a
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: n/a
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: n/a
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: n/a
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: n/a
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: n/a
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: n/a
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+74 records imported for University of St Andrews
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution Queens University Belfast
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: Feburary 2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: Feburary 2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: Feburary 2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: Feburary 2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: Feburary 2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: Feburary 2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: Feburary 2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: Feburary 2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: Feburary 2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: Feburary 2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: Feburary 2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: Feburary 2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+80 records imported for Queens University Belfast
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Edinburgh
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+246 records imported for University of Edinburgh
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Sheffield
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+133 records imported for University of Sheffield
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Bangor
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: not yet published
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: not yet published
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+45 records imported for University of Bangor
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Bath
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:35]:
+Amount (native currency) could not be parsed: 1629 EURO / USD$250
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:35]:
+Amount (native currency) could not be parsed: £220 / 1851EURO / 2500 USD
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+169 records imported for University of Bath
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Birmingham
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+362 records imported for University of Birmingham
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Bristol
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+311 records imported for University of Bristol
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution Cranfield University
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: TBP
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: TBP
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: TBP
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: TBP
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: TBP
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: TBP
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+25 records imported for Cranfield University
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution Durham University
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:42]:
+Amount (GBP) could not be parsed: Unknown
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+107 records imported for Durham University
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution Imperial College London
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 23/07/204
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 22/017/2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+550 records imported for Imperial College London
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Lancaster
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+46 records imported for University of Lancaster
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Leicester
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+120 records imported for University of Leicester
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Plymouth
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: £200 page charge + £5 bank charge
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: £5 bank charge
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+10 records imported for University of Plymouth
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution QMU
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 00/01/1900
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+99 records imported for QMU
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution Royal Holloway
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+8 records imported for Royal Holloway
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Sheffield
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: 180 colour charge (inc VAT)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+282 records imported for University of Sheffield
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Sussex
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: online 27/6/14
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: online 6/8/14
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: 10/11/2014 (online first)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: online 17/9; Dec 2014 vor
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: online 27/9/14
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: 14/10/14 (online)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+47 records imported for University of Sussex
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Swansea
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+59 records imported for University of Swansea
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution UCL
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+2955 records imported for UCL
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Warwick
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: Forthcoming
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: Forthcoming
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: Forthcoming
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: Forthcoming
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: Forthcoming
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+132 records imported for University of Warwick
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Bristol
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+87 records imported for University of Bristol
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Cardiff
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:19]:
+Additional costs could not be parsed: None
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+30 records imported for University of Cardiff
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:6]:
+Importing for institution University of Manchester
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:35]:
+Amount (native currency) could not be parsed: NA
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: 27/0/2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: 27/0/2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: In press
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: In press
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:55]:
+COAF contribution amount could not be parsed: N/A
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:48]:
+APC payment date could not be parsed: 01/102014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:35]:
+Amount (native currency) could not be parsed: N/A
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:35]:
+Amount (native currency) could not be parsed: NA
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:35]:
+Amount (native currency) could not be parsed: NA
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:35]:
+Amount (native currency) could not be parsed: NA
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:35]:
+Amount (native currency) could not be parsed: N/A
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:35]:
+Amount (native currency) could not be parsed: N/A
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: 21/10/214
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: 21/10/214
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:35]:
+Amount (native currency) could not be parsed: NA
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: 19/0/2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: 19/0/2014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:35]:
+Amount (native currency) could not be parsed: N/A
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: 19/092014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: 19/092014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:97]:
+Publication date could not be parsed: 20/102014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in institutional [/home/richard/Code/External/allapc/service/institutional.py:107]:
+Publication date could not be parsed: 20/102014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INFO in importer [/home/richard/Code/External/allapc/service/importer.py:15]:
+124 records imported for University of Manchester
+--------------------------------------------------------------------------------
+Using built-in rootcfg.py
+Loading root config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/config/rootcfg.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/config/dates.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/config/googlemap.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/config/http.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/config/mail.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/config/webapp.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/clientjs/settings.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/coreacuk/settings.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/crud/settings.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/doaj/settings.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/epmc/settings.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/es/settings.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/oag/settings.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/romeo/settings.py
+Loading config from /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/sherpafact/settings.py
+Loading config from /home/richard/Code/External/allapc/config/service.py
+Loading config from /home/richard/Code/External/allapc/local.cfg
+Specifying static directory /home/richard/Code/External/allapc/service/static
+Specifying static directory /home/richard/Code/External/allapc/magnificent-octopus/octopus/static
+Specifying static directory /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/clientjs/static
+Specifying static directory /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/crud/static
+Specifying static directory /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/es/static
+Specifying static directory /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/form/static
+Specifying static directory /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/oag/static
+Specifying static directory /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/sherpafact/static
+Registering Template Path /home/richard/Code/External/allapc/service/templates
+Registering Template Path /home/richard/Code/External/allapc/magnificent-octopus/octopus/templates
+Registering Template Path /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/clientjs/templates
+Registering Template Path /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/oag/templates
+App created at  16:43:38 19-02-2015

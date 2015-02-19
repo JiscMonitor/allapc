@@ -38,3 +38,5 @@ class APCSheet(clcsv.SheetWrapper):
     }
 
     EMPTY_STRING_AS_NONE = True
+
+    TRIM = True
