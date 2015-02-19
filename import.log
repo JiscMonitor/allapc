@@ -1196,4 +1196,8 @@ Registering Template Path /home/richard/Code/External/allapc/service/templates
 Registering Template Path /home/richard/Code/External/allapc/magnificent-octopus/octopus/templates
 Registering Template Path /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/clientjs/templates
 Registering Template Path /home/richard/Code/External/allapc/magnificent-octopus/octopus/modules/oag/templates
-App created at  16:43:38 19-02-2015
+App created at  17:25:15 19-02-2015
+Creating ES Index; host:http://localhost port:9200 db:allapc
+Creating ES Type+Mapping for institutional ; status: 200
+Creating ES Type+Mapping for apc ; status: 200
+App initialised at  17:25:15 19-02-2015

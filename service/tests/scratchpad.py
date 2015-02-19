@@ -1,5 +1,8 @@
 from service import importer
 
+from octopus.core import initialise
+initialise()
+
 importer.do_import("/home/richard/Dropbox/Documents/OA Monitor/apcdata/RCUK Royal Holloway.csv", "Royal Holloway")
 importer.do_import("/home/richard/Dropbox/Documents/OA Monitor/apcdata/RCUK University of Leeds.csv" , "University of Leeds")
 importer.do_import("/home/richard/Dropbox/Documents/OA Monitor/apcdata/RCUK Durham University.csv", "Durham University")
