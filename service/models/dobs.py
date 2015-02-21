@@ -442,6 +442,14 @@ class InstitutionalRecord(dataobj.DataObj, dao.InstitutionalRecordDAO):
     def green_option(self, val):
         self._set_single("index.green_option", val, coerce=self._utf8_unicode(), allow_none=False, ignore_none=True)
 
+    @property
+    def journal_type(self):
+        return self._get_single("index.journal_type", coerce=self._utf8_unicode())
+
+    @journal_type.setter
+    def journal_type(self, val):
+        self._set_single("index.journal_type", val, coerce=self._utf8_unicode(), allowed_values=[u"oa", u"hybrid"])
+
 
 class APCRecord(dao.APCRecordDAO):
     pass
