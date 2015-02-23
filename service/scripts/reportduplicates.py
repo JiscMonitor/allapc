@@ -8,6 +8,7 @@ count_terms_query = {
         "count_terms": {
             "terms": {
                 "field": "<field_to_count>",
+                "size": 1000,
                 "min_doc_count": "<min threshold>"
             }
         }
