@@ -18,12 +18,18 @@ def detect_dupes(connection, index, doctype, field):
     conn = esprit.raw.Connection(connection, index)
     query = count_terms_query.copy()
     query['aggregations']['count_terms']['terms']['field'] = field
-    query['aggregations']['count_terms']['terms']['min_doc_count'] = 1
+    query['aggregations']['count_terms']['terms']['min_doc_count'] = 2
 
     resp = esprit.raw.search(conn, doctype, query=query)
-    results = json.loads(resp.text)['aggregations']['count_terms']['buckets']
-    print json.dumps(results)
-
+    try:
+        results = json.loads(resp.text)['aggregations']['count_terms']['buckets']
+        maxlen = max([len(result['key']) for result in results])
+        rowformat = "{:<%s}{}" % (maxlen + 4)
+        print "Duplicate entries for {0} found:".format(field)
+        for res in results:
+            print rowformat.format(res['key'], res['doc_count'])
+    except ValueError:
+        print "No duplicates found"
 
 if __name__ == "__main__":
     import argparse
