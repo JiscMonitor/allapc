@@ -1,12 +1,28 @@
 """Show duplicates in the index of the given field. """
 
 import esprit
+import json
 
-def detect_dupes(connection, type, ):
-    conn = esprit.raw.Connection("http://localhost:9200", "allapc")
+count_terms_query = {
+    "aggregations": {
+        "count_terms": {
+            "terms": {
+                "field": "<field_to_count>",
+                "min_doc_count": "<min threshold>"
+            }
+        }
+    }
+}
 
-    for results in esprit.tasks.scroll(conn, TYPE, ):
+def detect_dupes(connection, index, doctype, field):
+    conn = esprit.raw.Connection(connection, index)
+    query = count_terms_query.copy()
+    query['aggregations']['count_terms']['terms']['field'] = field
+    query['aggregations']['count_terms']['terms']['min_doc_count'] = 1
 
+    resp = esprit.raw.search(conn, doctype, query=query)
+    results = json.loads(resp.text)['aggregations']['count_terms']['buckets']
+    print json.dumps(results)
 
 
 if __name__ == "__main__":
@@ -27,5 +43,4 @@ if __name__ == "__main__":
                         help="The field to detect duplicates on")
 
     args = parser.parse_args()
-
-    detect_dupes(args.connection, args.type)
+    detect_dupes(args.connection, args.index, args.type, args.field)
