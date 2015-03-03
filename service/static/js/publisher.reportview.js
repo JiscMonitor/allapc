@@ -122,16 +122,25 @@ jQuery(document).ready(function($) {
             startWith = "#stats-container";
         }
 
-        // calculate the new graph heights
-        var fixed_aspects = 70;
-        var num = 10;
-        if (vals.length > 0) { num = vals.length }
-        var report_height = 50 * num + fixed_aspects;
-        var container_height = report_height + 50;
+        function adjustCssClosure(selector) {
 
-        $("#allapc-total-expenditure").css("height", container_height + "px");
-        $("#allapc-stats").css("height", container_height + "px");
-        $("#apc-count").css("height", container_height + "px");
+            function adjustCss(options, context) {
+                // how many values do we need to display
+                var num = options.data_series[0].values.length;
+                var fixed_aspects = 70;
+                var bar_allowance = 50;
+
+                // calculate the new graph heights
+
+                var report_height = bar_allowance * num + fixed_aspects;
+                var container_height = report_height + 50;
+
+                $(selector).css("height", container_height + "px")
+                    .find(".reportview").css("height", report_height + "px");
+            }
+
+            return adjustCss
+        }
 
         $('#apc-count').empty();
         $('#apc-count').report({
@@ -146,7 +155,8 @@ jQuery(document).ready(function($) {
                 }
             ],
             fixed_filters: filters,
-            render_the_reportview: customReportViewClosure(report_height)
+            render_the_reportview: customReportViewClosure(100),
+            pre_render_callback: adjustCssClosure("#apc-count")
         });
 
         $('#allapc-total-expenditure').empty();
@@ -165,7 +175,8 @@ jQuery(document).ready(function($) {
                 }
             ],
             fixed_filters: filters,
-            render_the_reportview: customReportViewClosure(report_height)
+            render_the_reportview: customReportViewClosure(100),
+            pre_render_callback: adjustCssClosure("#allapc-total-expenditure")
         });
 
 
@@ -184,7 +195,8 @@ jQuery(document).ready(function($) {
                 }
             ],
             fixed_filters: filters,
-            render_the_reportview: customReportViewClosure(report_height)
+            render_the_reportview: customReportViewClosure(100),
+            pre_render_callback: adjustCssClosure("#allapc-stats")
         });
 
         $("#loading").hide();

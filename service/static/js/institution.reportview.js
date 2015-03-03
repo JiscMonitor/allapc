@@ -122,16 +122,25 @@ jQuery(document).ready(function($) {
             startWith = "#stats-container";
         }
 
-        // calculate the new graph heights
-        var fixed_aspects = 70;
-        var num = 10;
-        if (vals.length > 0) { num = vals.length }
-        var report_height = 50 * num + fixed_aspects;
-        var container_height = report_height + 50;
+        function adjustCssClosure(selector) {
 
-        $("#allapc-total-expenditure").css("height", container_height + "px");
-        $("#allapc-stats").css("height", container_height + "px");
-        $("#apc-count").css("height", container_height + "px");
+            function adjustCss(options, context) {
+                // how many values do we need to display
+                var num = options.data_series[0].values.length;
+                var fixed_aspects = 70;
+                var bar_allowance = 50;
+
+                // calculate the new graph heights
+
+                var report_height = bar_allowance * num + fixed_aspects;
+                var container_height = report_height + 50;
+
+                $(selector).css("height", container_height + "px")
+                    .find(".reportview").css("height", report_height + "px");
+            }
+
+            return adjustCss
+        }
 
         $('#apc-count').empty();
         $('#apc-count').report({
@@ -146,7 +155,8 @@ jQuery(document).ready(function($) {
                 }
             ],
             fixed_filters: filters,
-            render_the_reportview: customReportViewClosure(report_height)
+            render_the_reportview: customReportViewClosure(100),
+            pre_render_callback: adjustCssClosure("#apc-count")
         });
 
         $('#allapc-total-expenditure').empty();
@@ -165,7 +175,8 @@ jQuery(document).ready(function($) {
                 }
             ],
             fixed_filters: filters,
-            render_the_reportview: customReportViewClosure(report_height)
+            render_the_reportview: customReportViewClosure(100),
+            pre_render_callback: adjustCssClosure("#allapc-total-expenditure")
         });
 
 
@@ -184,7 +195,8 @@ jQuery(document).ready(function($) {
                 }
             ],
             fixed_filters: filters,
-            render_the_reportview: customReportViewClosure(report_height)
+            render_the_reportview: customReportViewClosure(100),
+            pre_render_callback: adjustCssClosure("#allapc-stats")
         });
 
         $("#loading").hide();
@@ -248,4 +260,150 @@ jQuery(document).ready(function($) {
         allow_clear : true,
         multiple: true
     });
+
+    function prepDates() {
+        var min = octopus.page[octopus.page.date_type];
+        $("#date_from").datepicker("option", "minDate", min)
+            .datepicker("option", "defaultDate", min);
+
+        $("#date_to").datepicker("option", "minDate", min);
+    }
+
+    function loadDates(data) {
+        octopus.page.date_type = "paid";
+        octopus.page.applied = new Date(data.applied);
+        octopus.page.paid = new Date(data.paid);
+        octopus.page.published = new Date(data.published);
+        prepDates();
+    }
+
+    function triggerSearch() {
+
+        function removeRangeFacet() {
+            // remove any current range facet
+            var current_facets = $.fn.facetview.options.facets;
+            var removes = [];
+            for (var i = 0; i < current_facets.length; i++) {
+                var f = current_facets[i];
+                if (f.type === "range") {
+                    removes.push(i);
+                }
+            }
+            removes = removes.reverse();
+            for (var i = 0; i < removes.length; i++) {
+                current_facets.splice($.inArray(removes[i], current_facets), 1)
+            }
+        }
+
+        // get the search ranges and field
+        var fr = $("#date_from").val();
+        if (fr) {
+            fr = $.datepicker.parseDate("dd-mm-yy", fr);
+            fr = $.datepicker.formatDate("yy-mm-dd", fr);
+        }
+
+        var to = $("#date_to").val();
+        if (to) {
+            to = $.datepicker.parseDate("dd-mm-yy", to);
+            to = $.datepicker.formatDate("yy-mm-dd", to);
+        }
+
+        var field = "monitor.jm:apc.date_paid";
+        if (octopus.page.date_type == "applied") {
+            field = "jm:dateApplied";
+        } else if (octopus.page.date_type == "published") {
+            field = "rioxxterms:publication_date";
+        }
+
+        if (!fr && !to) {
+            // remove any values and re-issue the search
+
+            // remove any existing range facet
+            removeRangeFacet();
+
+            // unset any predefined filters
+            $.fn.facetview.options.predefined_filters = {};
+
+        } else {
+            // write the new values and re-issue the search
+
+            // create the facet that we will want to add to facetview
+            var range = {};
+            if (fr) {
+                range["from"] = fr;
+            }
+            if (to) {
+                range["to"] = to;
+            }
+            var range_facet = {
+                field: field,
+                type: "range",
+                hidden: true,
+                range : [range]
+            };
+
+            // remove the existing range facet
+            removeRangeFacet();
+
+            // add the new range facet
+            $.fn.facetview.options.facets.push(range_facet);
+
+            // create a pre-defined range filter
+            var range_filter = {};
+            range_filter[field] = {};
+            if (fr) {
+                range_filter[field]["from"] = fr;
+            }
+            if (to) {
+                range_filter[field]["to"] = to;
+            }
+
+            // set the predefined fileter in the facetview options
+            $.fn.facetview.options.predefined_filters = range_filter;
+        }
+
+        // now actually trigger a search
+        $(".facetview_force_search").trigger("click");
+    }
+
+    // populate and set the bindings on the date selectors
+    $("#date_from").datepicker({
+        dateFormat: "dd-mm-yy",
+        constrainInput: true,
+        changeYear: true,
+        maxDate: 0
+    }).bind("change", function() {
+        triggerSearch();
+    });
+
+    $("#date_to").datepicker({
+        dateFormat: "dd-mm-yy",
+        constrainInput: true,
+        defaultDate: 0,
+        changeYear: true,
+        maxDate: 0
+    }).bind("change", function() {
+        triggerSearch();
+    });
+
+    $("#date_type").select2().bind("change", function() {
+        octopus.page.date_type = $(this).select2("val");
+        prepDates();
+
+        // if dates are specified, trigger the search
+        var fr = $("#date_from").val();
+        var to = $("#date_to").val();
+        if (to || fr) {
+            triggerSearch();
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        dataType: "jsonp",
+        url: "/dates",
+        success: loadDates
+    });
+
 });
