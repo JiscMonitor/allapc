@@ -11,7 +11,12 @@ jQuery(document).ready(function($) {
 
         var issn = "";
         if (monitor.hasOwnProperty("dc:source") && monitor["dc:source"].hasOwnProperty("identifier")) {
-            issn = " (ISSN:" + monitor["dc:source"]["identifier"][0]["id"] + ")";
+            var sis = monitor["dc:source"]["identifier"];
+            if (sis.length > 0) {
+                if (sis[0].hasOwnProperty("id")) {
+                    issn = " (ISSN:" + monitor["dc:source"]["identifier"][0]["id"] + ")";
+                }
+            }
         }
 
         var fund = "";
