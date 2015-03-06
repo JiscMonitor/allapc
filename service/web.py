@@ -22,6 +22,10 @@ def publisher():
 def institution():
     return render_template("institution.html")
 
+@app.route("/report/oavshybrid")
+def oavshybrid():
+    return render_template("oavshybrid.html")
+
 @app.route("/report/goldgreen")
 def goldgreen():
     return render_template("goldgreen.html")

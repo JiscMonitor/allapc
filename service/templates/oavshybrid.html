@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style type="text/css">
+
+#apc-count {
+    height: 750px;
+    width: 800px;
+}
+#apc-count .reportview {
+    height: 700px;
+}
+
+#allapc-total-expenditure {
+    height: 750px;
+    width: 800px;
+}
+#allapc-total-expenditure .reportview {
+    height: 700px;
+}
+
+#allapc-stats {
+    height: 750px;
+    width: 800px;
+}
+#allapc-stats .reportview {
+    height: 700px;
+}
+</style>
+
+<h1 style="margin-bottom: 30px">Hybrid vs Open Access</h1>
+<div class="row-fluid">
+    <div class="span3">
+        <input type='text' name='publisher' id='ac_publisher' style='width: 100%; padding-top: 45px;'>
+        <div id="facetview-controls"></div>
+    </div>
+    <div class="span9">
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#" id="show_count"><strong>APC Count</strong></a></li>
+                    <li><a href="#" id="show_total"><strong>Total Expenditure</strong></a></li>
+                    <li><a href="#" id="show_stats"><strong>Min, Max, Mean</strong></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="apc-count-container">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="apc-count"></div>
+                </div>
+            </div>
+        </div>
+        <div id="total-expenditure-container">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="allapc-total-expenditure"></div>
+                </div>
+            </div>
+        </div>
+        <div id="stats-container">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="allapc-stats"></div>
+                </div>
+            </div>
+        </div>
+        <div id="loading">
+            <div class="row-fluid">
+                <div class="span12">
+                    <img src="{{url_for('static', filename='images/loading.gif')}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block extra_js_bottom %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/publisher.reportview.js') }}"></script>
+{% endblock%}
