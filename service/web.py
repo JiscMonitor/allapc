@@ -3,8 +3,9 @@ from flask import Flask, request, abort, render_template, redirect, make_respons
 from flask.views import View
 
 from octopus.core import app, initialise
-from octopus.lib.webapp import custom_static
-import sys
+from octopus.lib.webapp import custom_static, jsonp
+from service import dao
+import sys, json
 
 @app.route("/")
 def root():
@@ -29,6 +30,14 @@ def oavshybrid():
 @app.route("/report/goldgreen")
 def goldgreen():
     return render_template("goldgreen.html")
+
+@app.route("/dates")
+@jsonp
+def dates():
+    stats = dao.InstitutionalRecordDAO.date_statistics()
+    resp = make_response(json.dumps(stats))
+    resp.mimetype = "application/json"
+    return resp
 
 # this allows us to override the standard static file handling with our own dynamic version
 @app.route("/static/<path:filename>")
