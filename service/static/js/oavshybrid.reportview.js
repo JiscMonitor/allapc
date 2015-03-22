@@ -90,12 +90,15 @@ jQuery(document).ready(function($) {
 
 
         // hide the graphs while we re-render them
-        octopus.display.hideOffScreen("#apc-count-container");
+        octopus.display.hideOffScreen("#oa-count-container");
+        octopus.display.hideOffScreen("#hybrid-count-container");
         octopus.display.hideOffScreen("#total-expenditure-container");
 
         // determine which graph we will bring back in
-        var startWith = "#apc-count-container";
-        if ($("#show_total").parent().hasClass("active")) {
+        var startWith = "#oa-count-container";
+        if ($("#show_hybrid").parent().hasClass("active")) {
+            startWith = "#hybrid-count-container";
+        } else if ($("#show_total").parent().hasClass("active")) {
             startWith = "#total-expenditure-container";
         }
 
@@ -119,22 +122,46 @@ jQuery(document).ready(function($) {
             return adjustCss
         }
 
-        $('#apc-count').empty();
-        $('#apc-count').report({
+        $('#oa-count').empty();
+        var filter_oa = {"term" : {"index.journal_type" : "oa"}};
+        filters.push(filter_oa);
+        $('#oa-count').report({
             type: 'horizontal_multibar',
             search_url: octopus.config.inst_query_endpoint,
             facets : [
                 {
                     "type" : "terms",
-                    "field" : "monitor.dcterms:publisher.name.exact",
+                    "field" : "monitor.rioxxterms:project.name",
                     "size" : 10,
-                    "display" : "Number of APCs paid"
+                    "display" : "Number of projects"
                 }
             ],
             fixed_filters: filters,
             render_the_reportview: customReportViewClosure(100),
-            pre_render_callback: adjustCssClosure("#apc-count")
+            pre_render_callback: adjustCssClosure("oa-count")
         });
+
+        $('#hybrid-count').empty();
+        var filter_hybrid = {"term" : {"index.journal_type" : "hybrid"}};
+        filters.pop();
+        filters.push(filter_hybrid);
+        $('#hybrid-count').report({
+            type: 'horizontal_multibar',
+            search_url: octopus.config.inst_query_endpoint,
+            facets : [
+                {
+                    "type" : "terms",
+                    "field" : "monitor.rioxxterms:project.name",
+                    "size" : 10,
+                    "display" : "Number of projects"
+                }
+            ],
+            fixed_filters: filters,
+            render_the_reportview: customReportViewClosure(100),
+            pre_render_callback: adjustCssClosure("hybrid-count")
+        });
+        filters.pop();
+
 
         $('#allapc-total-expenditure').empty();
         $('#allapc-total-expenditure').report({
@@ -178,24 +205,34 @@ jQuery(document).ready(function($) {
         post_render_callback: updateReport
     });
 
-    $("#show_count").click(function(event) {
+    $("#show_oa").click(function(event) {
         event.preventDefault();
-        octopus.display.hideOffScreen("#stats-container");
+        octopus.display.hideOffScreen("#hybrid-count-container");
         octopus.display.hideOffScreen("#total-expenditure-container");
-        octopus.display.bringIn("#apc-count-container");
+        octopus.display.bringIn("#oa-count-container");
         $(this).parent().addClass("active");
-        $("#show_stats").parent().removeClass("active");
+        $("#show_hybrid").parent().removeClass("active");
+        $("#show_total").parent().removeClass("active");
+    });
+
+    $("#show_hybrid").click(function(event) {
+        event.preventDefault();
+        octopus.display.hideOffScreen("#oa-count-container");
+        octopus.display.hideOffScreen("#total-expenditure-container");
+        octopus.display.bringIn("#hybrid-count-container");
+        $(this).parent().addClass("active");
+        $("#show_oa").parent().removeClass("active");
         $("#show_total").parent().removeClass("active");
     });
 
     $("#show_total").click(function(event) {
         event.preventDefault();
-        octopus.display.hideOffScreen("#stats-container");
-        octopus.display.hideOffScreen("#apc-count-container");
+        octopus.display.hideOffScreen("#hybrid-count-container");
+        octopus.display.hideOffScreen("#oa-count-container");
         octopus.display.bringIn("#total-expenditure-container");
         $(this).parent().addClass("active");
-        $("#show_stats").parent().removeClass("active");
-        $("#show_count").parent().removeClass("active");
+        $("#show_oa").parent().removeClass("active");
+        $("#show_hybrid").parent().removeClass("active");
     });
 
     // first bind select2 to the publisher autocomplete

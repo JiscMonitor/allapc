@@ -4,11 +4,19 @@
 
 <style type="text/css">
 
-#apc-count {
+#oa-count {
     height: 750px;
     width: 800px;
 }
-#apc-count .reportview {
+#oa-count .reportview {
+    height: 700px;
+}
+
+#hybrid-count {
+    height: 750px;
+    width: 800px;
+}
+#hybrid-count .reportview {
     height: 700px;
 }
 
@@ -17,14 +25,6 @@
     width: 800px;
 }
 #allapc-total-expenditure .reportview {
-    height: 700px;
-}
-
-#allapc-stats {
-    height: 750px;
-    width: 800px;
-}
-#allapc-stats .reportview {
     height: 700px;
 }
 </style>
@@ -52,15 +52,23 @@
         <div class="row-fluid">
             <div class="span12">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#" id="show_count"><strong>APC Count</strong></a></li>
+                    <li class="active"><a href="#" id="show_oa"><strong>Open Access Count</strong></a></li>
+                    <li><a href="#" id="show_hybrid"><strong>Hybrid Count</strong></a></li>
                     <li><a href="#" id="show_total"><strong>Total Expenditure</strong></a></li>
                 </ul>
             </div>
         </div>
-        <div id="apc-count-container">
+        <div id="oa-count-container">
             <div class="row-fluid">
                 <div class="span12">
-                    <div id="apc-count"></div>
+                    <div id="oa-count"></div>
+                </div>
+            </div>
+        </div>
+        <div id="hybrid-count-container">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="hybrid-count"></div>
                 </div>
             </div>
         </div>
