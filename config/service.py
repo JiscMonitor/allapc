@@ -79,3 +79,9 @@ AUTOCOMPLETE_TERM = {
         "dao" : "service.dao.InstitutionalRecordDAO"
     }
 }
+
+#########################################################
+# Application specific config
+
+import os
+UNIQUE_PUBLISHER_MAPPING = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "resources", "unique-publisher-mapping.tsv")

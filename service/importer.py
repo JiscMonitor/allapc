@@ -1,6 +1,7 @@
 from octopus.core import app
 from service.sheets import APCSheet
 from service.institutional import Sheet2Institutional
+from service.publishers import PUBLISHER_NAME_MAP
 
 def do_import(csv_path, institution=None):
     app.logger.info("Importing for institution {x}".format(x=institution))
@@ -10,6 +11,12 @@ def do_import(csv_path, institution=None):
         if institution is not None:
             obj["institution"] = institution
         ir = Sheet2Institutional.sheet2institutional(obj)
+
+        # normalise the publisher name on the way in
+        pub = ir.monitor.publisher
+        if pub is not None:
+            ir.monitor.publisher = PUBLISHER_NAME_MAP.get(ir.monitor.publisher, ir.monitor.publisher)
+
         ir.save()
         count += 1
     app.logger.info("{x} records imported for {y}".format(x=count, y=institution))
