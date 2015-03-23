@@ -76,15 +76,15 @@ jQuery(document).ready(function($) {
             filters = filters.concat(fvfilters)
         }
 
-        // get the filters from the publisher autocomplete box
-        var vals = $("#ac_publisher").select2("val");
+        // get the filters from the funder autocomplete box
+        var vals = $("#ac_funder").select2("val");
         if (vals.length > 0) {
-            var orfilter = {"terms" : {"monitor.dcterms:publisher.name.exact" : vals}};
+            var orfilter = {"terms" : {"monitor.rioxxterms:project.name.exact" : vals}};
             filters.push(orfilter);
         }
 
-        $("#ac_publisher").unbind("change");
-        $("#ac_publisher").change(function(event) {
+        $("#ac_funder").unbind("change");
+        $("#ac_funder").change(function(event) {
             $(".facetview_force_search").trigger("click");
         });
 
@@ -131,14 +131,14 @@ jQuery(document).ready(function($) {
             facets : [
                 {
                     "type" : "terms",
-                    "field" : "monitor.rioxxterms:project.name",
+                    "field" : "monitor.rioxxterms:project.name.exact",
                     "size" : 10,
-                    "display" : "Number of projects"
+                    "display" : "Projects published OA"
                 }
             ],
             fixed_filters: filters,
             render_the_reportview: customReportViewClosure(100),
-            pre_render_callback: adjustCssClosure("oa-count")
+            pre_render_callback: adjustCssClosure("#oa-count")
         });
 
         $('#hybrid-count').empty();
@@ -151,14 +151,14 @@ jQuery(document).ready(function($) {
             facets : [
                 {
                     "type" : "terms",
-                    "field" : "monitor.rioxxterms:project.name",
+                    "field" : "monitor.rioxxterms:project.name.exact",
                     "size" : 10,
-                    "display" : "Number of projects"
+                    "display" : "Projects published hybrid"
                 }
             ],
             fixed_filters: filters,
             render_the_reportview: customReportViewClosure(100),
-            pre_render_callback: adjustCssClosure("hybrid-count")
+            pre_render_callback: adjustCssClosure("#hybrid-count")
         });
         filters.pop();
 
@@ -235,12 +235,12 @@ jQuery(document).ready(function($) {
         $("#show_hybrid").parent().removeClass("active");
     });
 
-    // first bind select2 to the publisher autocomplete
+    // first bind select2 to the funder autocomplete
     octopus.esac.bindTermAutocomplete({
-        selector : "#ac_publisher",
-        minimumInputLength : 3,
-        placeholder :"Choose publishers to display",
-        type : "publisher",
+        selector : "#ac_funder",
+        minimumInputLength : 2,
+        placeholder :"Choose funders to display",
+        type : "funder",
         allow_clear : true,
         multiple: true
     });

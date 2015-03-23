@@ -44,7 +44,7 @@
             <label for="date_to">To</label>
             <input type="text" name="date_to" id="date_to" placeholder="latest date">
 
-            <input type='text' name='publisher' id='ac_publisher' style='width: 100%; padding-top: 20px'>
+            <input type='text' name='funder' id='ac_funder' style='width: 100%; padding-top: 20px'>
             <div id="facetview-controls"></div>
         </div>
     </div>
@@ -90,7 +90,6 @@
 </div>
 
 {% endblock %}
-
 
 {% block extra_js_bottom %}
 <script type="text/javascript" src="{{ url_for('static', filename='js/oavshybrid.reportview.js') }}"></script>
