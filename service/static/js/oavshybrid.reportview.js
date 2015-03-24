@@ -86,7 +86,7 @@ jQuery(document).ready(function($) {
             startWith = "#total-expenditure-container";
         }
 
-        function dataSeriesFunction(callback) {
+        function oavshybridSeriesFunction(callback) {
             var query = {
                 "query" : {
                     "bool" : {
@@ -121,8 +121,6 @@ jQuery(document).ready(function($) {
                     var project = projects[i];
                     var project_name = project.key;
                     var oavshybrid = project.oavshybrid.buckets;
-                    console.log(JSON.stringify(oavshybrid));
-                    console.log(oavshybrid.length);
                     for (var j=0; j < oavshybrid.length; j++) {
                         switch (oavshybrid[j].key){
                             case "oa":
@@ -130,6 +128,70 @@ jQuery(document).ready(function($) {
                                 break;
                             case "hybrid":
                                 hybrid_series.values.push({label : project_name, value: oavshybrid[j].doc_count});
+                        }
+                    }
+                }
+
+                // finally, hit the callback
+                callback([oa_series, hybrid_series])
+            }
+
+            doElasticSearchQuery({
+                success: convertToDataSeries,
+                search_url: octopus.config.inst_query_endpoint,
+                queryobj: query,
+                datatype: "jsonp"
+            })
+        }
+
+        function totalSeriesFunction(callback) {
+            var query = {
+                "query" : {
+                    "bool" : {
+                        "must" :
+                            filters
+                    }
+                },
+                "size" : 0,
+                "aggregations" : {
+                    "project" : {
+                        "terms" : {
+                            "field" : "monitor.rioxxterms:project.name.exact"
+                        },
+                         "aggregations" : {
+                             "oavshybrid" : {
+                                 "terms" : {
+                                     "field": "index.journal_type",
+                                 },
+                                 "aggregations" : {
+                                     "apc_costs" : {
+                                        "stats" : { "field" : "monitor.jm:apc.amount_gbp"}
+                                     }
+                                 }
+                             }
+                         }
+                    }
+                }
+            };
+
+            function convertToDataSeries(rawdata, results) {
+
+                var oa_series = {key : "OA Expenditure (£)", values : []};
+                var hybrid_series = {key : "Hybrid Expenditure (£)", values : []};
+
+                var projects = rawdata.aggregations.project.buckets;
+                for (var i = 0; i < projects.length; i++) {
+                    var project = projects[i];
+                    var project_name = project.key;
+                    var oavshybrid = project.oavshybrid.buckets;
+                    console.log(JSON.stringify(oavshybrid));
+                    for (var j=0; j < oavshybrid.length; j++) {
+                        switch (oavshybrid[j].key){
+                            case "oa":
+                                oa_series.values.push({label : project_name, value: oavshybrid[j].apc_costs.sum});
+                                break;
+                            case "hybrid":
+                                hybrid_series.values.push({label : project_name, value: oavshybrid[j].apc_costs.sum});
                         }
                     }
                 }
@@ -169,30 +231,15 @@ jQuery(document).ready(function($) {
         $('#oavshybrid-count').empty();
         $('#oavshybrid-count').report({
             type: 'horizontal_multibar',
-            data_function: dataSeriesFunction,
-            "display" : "Projects published OA",
-            //fixed_filters: filters,
+            data_function: oavshybridSeriesFunction,
             render_the_reportview: customReportViewClosure(100),
             pre_render_callback: adjustCssClosure("#oavshybrid-count"),
-            debug : true
         });
 
         $('#allapc-total-expenditure').empty();
         $('#allapc-total-expenditure').report({
             type: 'horizontal_multibar',
-            search_url: octopus.config.inst_query_endpoint,
-            facets : [
-                {
-                    "type" : "terms_stats",
-                    "facet_value_field" : "total",
-                    // "series_function": statsSeries,
-                    "field" : "monitor.dcterms:publisher.name.exact",
-                    "value_field" : "monitor.jm:apc.amount_gbp",
-                    "size" : 10,
-                    "display" : "Total Expenditure (£)"
-                }
-            ],
-            fixed_filters: filters,
+            data_function: totalSeriesFunction,
             render_the_reportview: customReportViewClosure(100),
             pre_render_callback: adjustCssClosure("#allapc-total-expenditure")
         });
