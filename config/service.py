@@ -77,18 +77,5 @@ AUTOCOMPLETE_TERM = {
         "default_size" : 10,
         "max_size" : 25,
         "dao" : "service.dao.InstitutionalRecordDAO"
-    },
-    "funder" : {
-        "filter" : {
-            "monitor.rioxxterms:project.name.exact" : {
-                "start_wildcard" : True,
-                "end_wildcard" : True
-            }
-        },
-        "facet" : "monitor.rioxxterms:project.name.exact",
-        "input_filter" : lambda x : x,
-        "default_size" : 10,
-        "max_size" : 25,
-        "dao" : "service.dao.InstitutionalRecordDAO"
     }
 }

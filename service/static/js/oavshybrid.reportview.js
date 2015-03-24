@@ -76,19 +76,6 @@ jQuery(document).ready(function($) {
             filters = filters.concat(fvfilters)
         }
 
-        // get the filters from the funder autocomplete box
-        var vals = $("#ac_funder").select2("val");
-        if (vals.length > 0) {
-            var orfilter = {"terms" : {"monitor.rioxxterms:project.name.exact" : vals}};
-            filters.push(orfilter);
-        }
-
-        $("#ac_funder").unbind("change");
-        $("#ac_funder").change(function(event) {
-            $(".facetview_force_search").trigger("click");
-        });
-
-
         // hide the graphs while we re-render them
         octopus.display.hideOffScreen("#oa-count-container");
         octopus.display.hideOffScreen("#hybrid-count-container");
@@ -233,16 +220,6 @@ jQuery(document).ready(function($) {
         $(this).parent().addClass("active");
         $("#show_oa").parent().removeClass("active");
         $("#show_hybrid").parent().removeClass("active");
-    });
-
-    // first bind select2 to the funder autocomplete
-    octopus.esac.bindTermAutocomplete({
-        selector : "#ac_funder",
-        minimumInputLength : 2,
-        placeholder :"Choose funders to display",
-        type : "funder",
-        allow_clear : true,
-        multiple: true
     });
 
     function prepDates() {
