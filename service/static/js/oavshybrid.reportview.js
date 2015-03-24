@@ -77,33 +77,23 @@ jQuery(document).ready(function($) {
         }
 
         // hide the graphs while we re-render them
-        octopus.display.hideOffScreen("#oa-count-container");
-        octopus.display.hideOffScreen("#hybrid-count-container");
+        octopus.display.hideOffScreen("#oavshybrid-count-container");
         octopus.display.hideOffScreen("#total-expenditure-container");
 
         // determine which graph we will bring back in
-        var startWith = "#oa-count-container";
+        var startWith = "#oavshybrid-count-container";
         if ($("#show_total").parent().hasClass("active")) {
             startWith = "#total-expenditure-container";
         }
 
         function dataSeriesFunction(callback) {
             var query = {
-                /*"query" : {
+                "query" : {
                     "bool" : {
-                        "must" : [
-                            {
-                                "range" : {
-                                    "year" : {
-                                        "gte" : from,
-                                        "lte" : to
-                                    }
-                                }
-                            },
-                            filter
-                        ]
+                        "must" :
+                            filters
                     }
-                },*/
+                },
                 "size" : 0,
                 "aggregations" : {
                     "project" : {
@@ -176,14 +166,14 @@ jQuery(document).ready(function($) {
             return adjustCss
         }
 
-        $('#oa-count').empty();
-        $('#oa-count').report({
+        $('#oavshybrid-count').empty();
+        $('#oavshybrid-count').report({
             type: 'horizontal_multibar',
             data_function: dataSeriesFunction,
             "display" : "Projects published OA",
             //fixed_filters: filters,
             render_the_reportview: customReportViewClosure(100),
-            pre_render_callback: adjustCssClosure("#oa-count"),
+            pre_render_callback: adjustCssClosure("#oavshybrid-count"),
             debug : true
         });
 
@@ -229,22 +219,20 @@ jQuery(document).ready(function($) {
         post_render_callback: updateReport
     });
 
-    $("#show_oa").click(function(event) {
+    $("#show_oavshybrid").click(function(event) {
         event.preventDefault();
-        octopus.display.hideOffScreen("#hybrid-count-container");
         octopus.display.hideOffScreen("#total-expenditure-container");
-        octopus.display.bringIn("#oa-count-container");
+        octopus.display.bringIn("#oavshybrid-count-container");
         $(this).parent().addClass("active");
         $("#show_total").parent().removeClass("active");
     });
 
     $("#show_total").click(function(event) {
         event.preventDefault();
-        octopus.display.hideOffScreen("#hybrid-count-container");
-        octopus.display.hideOffScreen("#oa-count-container");
+        octopus.display.hideOffScreen("#oavshybrid-count-container");
         octopus.display.bringIn("#total-expenditure-container");
         $(this).parent().addClass("active");
-        $("#show_oa").parent().removeClass("active");
+        $("#show_oavshybrid").parent().removeClass("active");
     });
 
     function prepDates() {
