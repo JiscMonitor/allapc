@@ -83,10 +83,77 @@ jQuery(document).ready(function($) {
 
         // determine which graph we will bring back in
         var startWith = "#oa-count-container";
-        if ($("#show_hybrid").parent().hasClass("active")) {
-            startWith = "#hybrid-count-container";
-        } else if ($("#show_total").parent().hasClass("active")) {
+        if ($("#show_total").parent().hasClass("active")) {
             startWith = "#total-expenditure-container";
+        }
+
+        function dataSeriesFunction(callback) {
+            var query = {
+                /*"query" : {
+                    "bool" : {
+                        "must" : [
+                            {
+                                "range" : {
+                                    "year" : {
+                                        "gte" : from,
+                                        "lte" : to
+                                    }
+                                }
+                            },
+                            filter
+                        ]
+                    }
+                },*/
+                "size" : 0,
+                "aggregations" : {
+                    "project" : {
+                        "terms" : {
+                            "field" : "monitor.rioxxterms:project.name.exact"
+                        },
+                         "aggregations" : {
+                             "oavshybrid" : {
+                                 "terms" : {
+                                     "field" : "index.journal_type"
+                                 }
+                             }
+                         }
+                    }
+                }
+            };
+
+            function convertToDataSeries(rawdata, results) {
+
+                var oa_series = {key : "Open Access", values : []};
+                var hybrid_series = {key : "Hybrid", values : []};
+
+                var projects = rawdata.aggregations.project.buckets;
+                for (var i = 0; i < projects.length; i++) {
+                    var project = projects[i];
+                    var project_name = project.key;
+                    var oavshybrid = project.oavshybrid.buckets;
+                    console.log(JSON.stringify(oavshybrid));
+                    console.log(oavshybrid.length);
+                    for (var j=0; j < oavshybrid.length; j++) {
+                        switch (oavshybrid[j].key){
+                            case "oa":
+                                oa_series.values.push({label : project_name, value: oavshybrid[j].doc_count});
+                                break;
+                            case "hybrid":
+                                hybrid_series.values.push({label : project_name, value: oavshybrid[j].doc_count});
+                        }
+                    }
+                }
+
+                // finally, hit the callback
+                callback([oa_series, hybrid_series])
+            }
+
+            doElasticSearchQuery({
+                success: convertToDataSeries,
+                search_url: octopus.config.inst_query_endpoint,
+                queryobj: query,
+                datatype: "jsonp"
+            })
         }
 
         function adjustCssClosure(selector) {
@@ -110,45 +177,15 @@ jQuery(document).ready(function($) {
         }
 
         $('#oa-count').empty();
-        var filter_oa = {"term" : {"index.journal_type" : "oa"}};
-        filters.push(filter_oa);
         $('#oa-count').report({
             type: 'horizontal_multibar',
-            search_url: octopus.config.inst_query_endpoint,
-            facets : [
-                {
-                    "type" : "terms",
-                    "field" : "monitor.rioxxterms:project.name.exact",
-                    "size" : 10,
-                    "display" : "Projects published OA"
-                }
-            ],
-            fixed_filters: filters,
+            data_function: dataSeriesFunction,
+            "display" : "Projects published OA",
+            //fixed_filters: filters,
             render_the_reportview: customReportViewClosure(100),
-            pre_render_callback: adjustCssClosure("#oa-count")
+            pre_render_callback: adjustCssClosure("#oa-count"),
+            debug : true
         });
-
-        $('#hybrid-count').empty();
-        var filter_hybrid = {"term" : {"index.journal_type" : "hybrid"}};
-        filters.pop();
-        filters.push(filter_hybrid);
-        $('#hybrid-count').report({
-            type: 'horizontal_multibar',
-            search_url: octopus.config.inst_query_endpoint,
-            facets : [
-                {
-                    "type" : "terms",
-                    "field" : "monitor.rioxxterms:project.name.exact",
-                    "size" : 10,
-                    "display" : "Projects published hybrid"
-                }
-            ],
-            fixed_filters: filters,
-            render_the_reportview: customReportViewClosure(100),
-            pre_render_callback: adjustCssClosure("#hybrid-count")
-        });
-        filters.pop();
-
 
         $('#allapc-total-expenditure').empty();
         $('#allapc-total-expenditure').report({
@@ -198,17 +235,6 @@ jQuery(document).ready(function($) {
         octopus.display.hideOffScreen("#total-expenditure-container");
         octopus.display.bringIn("#oa-count-container");
         $(this).parent().addClass("active");
-        $("#show_hybrid").parent().removeClass("active");
-        $("#show_total").parent().removeClass("active");
-    });
-
-    $("#show_hybrid").click(function(event) {
-        event.preventDefault();
-        octopus.display.hideOffScreen("#oa-count-container");
-        octopus.display.hideOffScreen("#total-expenditure-container");
-        octopus.display.bringIn("#hybrid-count-container");
-        $(this).parent().addClass("active");
-        $("#show_oa").parent().removeClass("active");
         $("#show_total").parent().removeClass("active");
     });
 
@@ -219,7 +245,6 @@ jQuery(document).ready(function($) {
         octopus.display.bringIn("#total-expenditure-container");
         $(this).parent().addClass("active");
         $("#show_oa").parent().removeClass("active");
-        $("#show_hybrid").parent().removeClass("active");
     });
 
     function prepDates() {
