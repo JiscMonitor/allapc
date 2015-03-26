@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style type="text/css">
+
+#oavshybrid-count {
+    height: 750px;
+    width: 800px;
+}
+#oavshybrid-count .reportview {
+    height: 700px;
+}
+
+#allapc-total-expenditure {
+    height: 750px;
+    width: 800px;
+}
+#allapc-total-expenditure .reportview {
+    height: 700px;
+}
+</style>
+
+<h1 style="margin-bottom: 30px">Open Access vs Hybrid</h1>
+<div class="row-fluid">
+    <div class="span3">
+        <div style="padding-top: 45px;">
+            <select name="date_type" id="date_type" style='width: 100%; margin-bottom: 10px'>
+                <option value="paid">Date APC paid</option>
+                <option value="applied">Date APC applied for</option>
+                <option value="published">Publication date</option>
+            </select>
+            <label for="date_from">From</label>
+            <input type="text" name="date_from" id="date_from" placeholder="earliest date">
+
+            <label for="date_to">To</label>
+            <input type="text" name="date_to" id="date_to" placeholder="latest date">
+
+            <div id="facetview-controls"></div>
+        </div>
+    </div>
+    <div class="span9">
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#" id="show_oavshybrid"><strong>OA/Hybrid Count</strong></a></li>
+                    <li><a href="#" id="show_total"><strong>Expenditure on OA/Hybrid</strong></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="oavshybrid-count-container">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="oavshybrid-count"></div>
+                </div>
+            </div>
+        </div>
+        <div id="total-expenditure-container">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="allapc-total-expenditure"></div>
+                </div>
+            </div>
+        </div>
+        <div id="loading">
+            <div class="row-fluid">
+                <div class="span12">
+                    <img src="{{url_for('static', filename='images/loading.gif')}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js_bottom %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/oavshybrid.reportview.js') }}"></script>
+{% endblock%}
