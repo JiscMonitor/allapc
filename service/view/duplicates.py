@@ -1,5 +1,6 @@
 from flask import Blueprint, request, url_for, make_response, abort, render_template
 from service.models import InstitutionalRecord
+import json, urllib
 
 blueprint = Blueprint('duplicates', __name__)
 
@@ -12,6 +13,17 @@ count_terms_query = {
                 "size": 1000,
                 "min_doc_count": "<min threshold>"
             }
+        }
+    }
+}
+
+doi_query = {
+    "query": {
+        "filtered": {
+            "query": { "match_all" : {} },
+            "filter": { "bool" : { "must": [
+                {"term": {"monitor.dc:identifier.id.exact" : "<DOI>"} }
+            ] } }
         }
     }
 }
@@ -43,3 +55,11 @@ def detect_dupes(field):
     except ValueError:
         # No duplicates found
         return False
+
+@blueprint.app_template_filter()
+def build_doi_search_url(doi):
+    # a query especially for this DOI
+    this_doi_query = doi_query.copy()
+    this_doi_query['query']['filtered']['filter']['bool']['must'][0]['term']['monitor.dc:identifier.id.exact'] = doi
+
+    return url_for('search', source=urllib.quote(json.dumps(doi_query)))

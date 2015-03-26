@@ -23,7 +23,7 @@
         {% for dup in duplicates %}
             <tr>
                 <td>
-                    {{ dup[0] }}
+                    <a href="{{ dup[0] | build_doi_search_url }}">{{ dup[0] }}</a>
                 </td>
                 <td>
                     {{ dup[1] }}
