@@ -161,7 +161,7 @@ jQuery(document).ready(function($) {
                          "aggregations" : {
                              "oavshybrid" : {
                                  "terms" : {
-                                     "field": "index.journal_type",
+                                     "field": "index.journal_type"
                                  },
                                  "aggregations" : {
                                      "apc_costs" : {
@@ -233,7 +233,7 @@ jQuery(document).ready(function($) {
             type: 'horizontal_multibar',
             data_function: oavshybridSeriesFunction,
             render_the_reportview: customReportViewClosure(100),
-            pre_render_callback: adjustCssClosure("#oavshybrid-count"),
+            pre_render_callback: adjustCssClosure("#oavshybrid-count")
         });
 
         $('#allapc-total-expenditure').empty();
@@ -258,12 +258,21 @@ jQuery(document).ready(function($) {
                 "display" : "Limit by Institution",
                 "open" : true,
                 "size" : 15
+            },
+            {
+                "field" : "index.journal_type",
+                "display" : "Journal Type",
+                "hidden" : true,
+                "logic" : "OR"
             }
         ],
         pushstate: false,
         render_the_facetview: customFrame,
         // render_facet_list: customFacetList,
-        post_render_callback: updateReport
+        post_render_callback: updateReport,
+        predefined_filters : {
+            "index.journal_type" : ["oa", "hybrid"]
+        }
     });
 
     $("#show_oavshybrid").click(function(event) {
@@ -342,8 +351,10 @@ jQuery(document).ready(function($) {
             // remove any existing range facet
             removeRangeFacet();
 
-            // unset any predefined filters
-            $.fn.facetview.options.predefined_filters = {};
+            // re-set the predefined filters
+            $.fn.facetview.options.predefined_filters = {
+                "index.journal_type" : ["oa", "hybrid"]
+            }
 
         } else {
             // write the new values and re-issue the search
@@ -380,7 +391,11 @@ jQuery(document).ready(function($) {
             }
 
             // set the predefined fileter in the facetview options
-            $.fn.facetview.options.predefined_filters = range_filter;
+            var predef = {
+                "index.journal_type" : ["oa", "hybrid"]
+            };
+            $.extend(predef, range_filter);
+            $.fn.facetview.options.predefined_filters = predef;
         }
 
         // now actually trigger a search
