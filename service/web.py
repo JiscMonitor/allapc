@@ -5,7 +5,8 @@ from flask.views import View
 from octopus.core import app, initialise
 from octopus.lib.webapp import custom_static, jsonp
 from service import dao
-import sys, json
+import sys
+import json
 
 @app.route("/")
 def root():
@@ -30,6 +31,10 @@ def oavshybrid():
 @app.route("/report/goldgreen")
 def goldgreen():
     return render_template("goldgreen.html")
+
+# mount the blueprint for the duplicates page
+from service.view.duplicates import blueprint as dup_page
+app.register_blueprint(dup_page)
 
 @app.route("/dates")
 @jsonp

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 style="margin-bottom: 30px">Duplicates in the {{ config.ELASTIC_SEARCH_INDEX }} index</h1>
+<div class="row-fluid">
+    <div style="display:none" id="blurb_container">
+        <p style="font-size: 30px; line-height: 40px"></p>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h3>Duplicates in {{ field }}</h3>
+        <br>
+        <table id="duplicates" style="width: 100%" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Value</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+        {% for dup in duplicates %}
+            <tr>
+                <td>
+                    {{ dup[0] }}
+                </td>
+                <td>
+                    {{ dup[1] }}
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

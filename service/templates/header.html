@@ -10,6 +10,7 @@
                     <li{% if request.path == url_for("institution") %} class="active"{% endif %}><a href="{{url_for('institution')}}">institution report</a></li>
                     <li{% if request.path == url_for("oavshybrid") %} class="active"{% endif %}><a href="{{url_for('oavshybrid')}}">oa/hybrid report</a></li>
                     <li{% if request.path == url_for("goldgreen") %} class="active"{% endif %}><a href="{{url_for('goldgreen')}}">gold vs green</a></li>
+                    <li{% if request.path == url_for("duplicates.index") %} class="active"{% endif %}><a href="{{url_for('duplicates.index')}}">duplicates</a></li>
                     <li{% if request.path == url_for("search") %} class="active"{% endif %}><a href="{{url_for('search')}}">search data</a></li>
                 </ul>
             </div>
