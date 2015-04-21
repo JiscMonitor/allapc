@@ -210,7 +210,7 @@ Where possible top-level keys in the model have been taken from the following me
         }
     ],
     
-    jm:provenance : [
+    "jm:provenance" : [
         "<provenance information for the data in this record>"
     ]
 }
