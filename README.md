@@ -78,6 +78,7 @@ Where possible top-level keys in the model have been taken from the following me
 
 * [The DCMI Terms](http://dublincore.org/documents/dcmi-terms/)
 * [RIOXX](http://rioxx.net/v2-0-beta-1/)
+* [NISO Access and Licence Indicators (ALI)](http://www.niso.org/workrooms/ali/)
 
 ```python
 {
@@ -85,9 +86,11 @@ Where possible top-level keys in the model have been taken from the following me
         "jm": "http://jiscmonitor.jiscinvolve.org/",
         "dc": "http://purl.org/dc/elements/1.1/",
         "dcterms": "http://purl.org/dc/terms/",
-        "rioxxterms": "http://rioxx.net/v2-0-beta-1/"
+        "rioxxterms": "http://rioxx.net/v2-0-beta-1/",
+        "ali" : "http://www.niso.org/schemas/ali/1.0/jsonld.json"
     }
     
+    "dcterms:dateAccepted" : "<date article was accepted for publication>",
     "jm:dateApplied" : "<date APC was initially applied for by author>",
     "rioxxterms:publication_date" : "<publication date>",
     
@@ -105,7 +108,23 @@ Where possible top-level keys in the model have been taken from the following me
             {"type" : "eissn", "id" : "<electronic issn of the journal>" },
             {"type" : "pissn", "id" : "<print issn of the journal>" },
             {"type" : "doi", "id" : "<doi for the journal or series>" }
-        ]
+        ],
+        
+        "oa_type" : "<hybrid|oa>",
+        "self_archiving" : {
+            "preprint" : {
+                "policy" : "<can|restricted|cannot>",
+                "embargo" : <number of months>
+            },
+            "postprint" : {
+                "policy" : "<can|restricted|cannot>",
+                "embargo" : <number of months>
+            },
+            "publisher" : {
+                "policy" : "<can|restricted|cannot>",
+                "embargo" : <number of months>
+            }
+        }
     },
     
     "rioxxterms:author" : [
@@ -125,7 +144,7 @@ Where possible top-level keys in the model have been taken from the following me
         ]
     },
     
-    "rioxxterms:type" : "<publication type>",
+    "rioxxterms:type" : "<publication type (article, etc)>",
     "dc:title" : "<title>",
     
     "rioxxterms:project" : [
@@ -163,7 +182,7 @@ Where possible top-level keys in the model have been taken from the following me
         }
     ],
     
-    "license_ref" : {
+    "ali:license_ref" : {
         "title" : "<name of licence>",
         "type" : "<type>", 
         "url" : "<url>", 
@@ -172,6 +191,27 @@ Where possible top-level keys in the model have been taken from the following me
     
     "jm:license_received" : [
         {"date" : "<date licence was checked>", "received" : true|false}
+    ],
+    
+    "jm:inRepository" : {
+        "metadata" : "True|False|Unknown",
+        "fulltext" : "True|False|Unknown"
+    },
+    
+    "jm:repository" : [
+        {
+            "name" : "<Name of repository which holds a copy>",
+            "repo_url" : "<url for repository>",
+            "record_url" : "<url to representation of record in repository>",
+            "metadata" : "True|False|Unknown",
+            "fulltext" : "True|False|Unknown",
+            "machine_readable_fulltext" : "True|False|Unknown",
+            "aam" : "True|False|Unknown"
+        }
+    ],
+    
+    jm:provenance : [
+        "<provenance information for the data in this record>"
     ]
 }
 ```
@@ -186,6 +226,8 @@ Descriptions of notable fields, and the requirements for their use are as follow
 * **dc:identifier** - should contain at least a URL to the object (as per RIOXX).  **Mandatory**
 * **dc:source** - the RIOXX profile considers this to principally a journal, but it will take any other object that is a suitable source
 such as a book.  **Mandatory where applicable**.
+* **dc:source.oa_type** - whether this journal is pure oa or hybrid
+* **dc:source.self_archiving** - for each of the doucument types *preprint*, *postprint* and *publisher* version, what the self-archiving policy is, and whether there is an associated embargo
 * **rioxxterms:author**  - as per the RIOXX profile this field is **Mandatory** (although note that it often isn't present)
 * **dc:publisher** - as per the RIOXX profile this field is **Recommended**.
 * **rioxxterms:type** - confirms to the RIOXX profile for controlled vocabulary of terms.  **Mandatory** (although note that it often isn't present).
@@ -198,10 +240,12 @@ or colour charges.  Any additional charges associated with publication should be
 * **jm:apc.fund** - this covers information about the fund or source of finance that the APC was paid from.  It could include RCUK, COAF or Institutional funds, and **does not** refer
  to the original funder of the work (which is covered in **rioxxterms:project**)
 * **jm:apc.currency** - the standard 3 letter currency code
-* **license_ref** - an object based on the OAG and DOAJ licence data formats for recording the type, version and url of a licence that should
+* **ali:license_ref** - an object based on the OAG and DOAJ licence data formats for recording the type, version and url of a licence that should
 have been applied to this item
-* **monitor.jm:licence_received** - was the licence that was ultimately applied to the publication that which the APC paid for?  This may be checked periodically by
+* **jm:licence_received** - was the licence that was ultimately applied to the publication that which the APC paid for?  This may be checked periodically by
 different organisations, so date provenance of the check is required.
+* **jm:inRepository** - whether the record is known to be in a repository, separated out into *metadata* only and *fulltext*
+* **jm:repository** - list of known repositories that the record appears in.  Each repository may contain the *metadata* and the *fulltext* ad may also provide the fulltext as *machine_readable_fulltext*, such as in an XML format.
 
 
 ### Institutional Records
