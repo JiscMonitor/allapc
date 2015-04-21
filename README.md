@@ -193,11 +193,6 @@ Where possible top-level keys in the model have been taken from the following me
         {"date" : "<date licence was checked>", "received" : true|false}
     ],
     
-    "jm:inRepository" : {
-        "metadata" : "True|False|Unknown",
-        "fulltext" : "True|False|Unknown"
-    },
-    
     "jm:repository" : [
         {
             "name" : "<Name of repository which holds a copy>",
@@ -244,7 +239,6 @@ or colour charges.  Any additional charges associated with publication should be
 have been applied to this item
 * **jm:licence_received** - was the licence that was ultimately applied to the publication that which the APC paid for?  This may be checked periodically by
 different organisations, so date provenance of the check is required.
-* **jm:inRepository** - whether the record is known to be in a repository, separated out into *metadata* only and *fulltext*
 * **jm:repository** - list of known repositories that the record appears in.  Each repository may contain the *metadata* and the *fulltext* ad may also provide the fulltext as *machine_readable_fulltext*, such as in an XML format.
 
 
