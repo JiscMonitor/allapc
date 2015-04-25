@@ -52,9 +52,12 @@ def static(filename):
 from octopus.modules.clientjs.configjs import blueprint as configjs
 app.register_blueprint(configjs)
 
-# mount the blueprint for the api itself (which will appear at the root of the url space)
+# mount both the standard crud api, and the custom crud api on the same url route
+from octopus.modules.crud.api import blueprint as crudapi
+app.register_blueprint(crudapi, url_prefix="/api")
+
 from service.view.api import blueprint as webapi
-app.register_blueprint(webapi)
+app.register_blueprint(webapi, url_prefix="/api")
 
 from octopus.modules.es.query import blueprint as query
 app.register_blueprint(query, url_prefix="/inst_query")

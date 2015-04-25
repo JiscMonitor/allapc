@@ -4,7 +4,7 @@ class InstitutionalRecordDAO(dao.ESDAO):
     __type__ = 'institutional'
 
     @classmethod
-    def find_by_local_id(cls, local_id, account_id):
+    def find_by_local_id(cls, local_id, account_id=None):
         liq = LocalIDQuery(local_id, account_id)
         return cls.object_query(q=liq.query())
 
@@ -49,7 +49,7 @@ class DateQuery(object):
         return q
 
 class LocalIDQuery(object):
-    def __init__(self, local_id, account_id):
+    def __init__(self, local_id, account_id=None):  # FIXME: until we implement security, account_id is meaningless
         self.local_id = local_id
         self.account_id = account_id
 
@@ -58,8 +58,8 @@ class LocalIDQuery(object):
             "query" : {
                 "bool" : {
                     "must" : [
-                        {"term" : {"admin.local_id.exact" : self.local_id}},
-                        {"term" : {"admin.account.exact" : self.account_id}}
+                        {"term" : {"admin.local_id.exact" : self.local_id}} #,
+                        #{"term" : {"admin.account.exact" : self.account_id}}
                     ]
                 }
             }

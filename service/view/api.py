@@ -1,9 +1,12 @@
+from octopus.core import app
 from flask import Blueprint, request, url_for, make_response, abort
-from service.api import AuthNZ_APC_API, NoSuchRecordException
+# from service.api import AuthNZ_APC_API, NoSuchRecordException
 import json
+from octopus.modules.crud.factory import CRUDFactory
 
 blueprint = Blueprint('api', __name__,)
 
+"""
 @blueprint.route('/apc', methods=["POST"])
 def create():
     api_key = request.values.get("api_key")
@@ -65,13 +68,20 @@ def apc(apc_id):
 
         # FIXME: is this how you return a No Content?
         return 204
+"""
 
 @blueprint.route("/local/<local_id>", methods=["GET"])
 def retrieve_local(local_id):
-    try:
-        ir = AuthNZ_APC_API.retrieve_by_local_id(local_id)
-    except NoSuchRecordException:
-        abort(404)
+    klazz = CRUDFactory.get_class("apc")
+    ir = klazz.get_by_local_id(local_id)
+
+    if ir is None:
+        app.logger.debug("Sending 404 Not Found")
+        resp = make_response(json.dumps({"status" : "not found"}))
+        resp.mimetype = "application/json"
+        resp.status_code = 404
+        return resp
+
     j = ir.json()
     resp = make_response(j)
     resp.mimetype = "application/json"

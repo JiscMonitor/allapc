@@ -80,6 +80,24 @@ AUTOCOMPLETE_TERM = {
     }
 }
 
+CRUD = {
+    "apc" : {
+        "model" : "service.models.InstitutionalRecordCrud",
+        "create" : {
+            "enable" : True
+        },
+        "retrieve" : {
+            "enable" : True
+        },
+        "update" : {
+            "enable" : True
+        },
+        "delete" : {
+            "enable" : True
+        }
+    }
+}
+
 #########################################################
 # Application specific config
 

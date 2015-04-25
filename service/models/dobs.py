@@ -9,10 +9,12 @@ class Monitor(dataobj.DataObj):
             "jm": "http://jiscmonitor.jiscinvolve.org/",
             "dc": "http://purl.org/dc/elements/1.1/",
             "dcterms": "http://purl.org/dc/terms/",
-            "rioxxterms": "http://rioxx.net/v2-0-beta-1/"
-        }
+            "rioxxterms": "http://rioxx.net/v2-0-beta-1/",
+            "ali" : "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+        },
 
-        "jm:dateApplied" : "<date APC was applied for by author>",
+        "dcterms:dateAccepted" : "<date article was accepted for publication>",
+        "jm:dateApplied" : "<date APC was initially applied for by author>",
         "rioxxterms:publication_date" : "<publication date>",
 
         "dc:identifier" : [
@@ -29,7 +31,23 @@ class Monitor(dataobj.DataObj):
                 {"type" : "eissn", "id" : "<electronic issn of the journal>" },
                 {"type" : "pissn", "id" : "<print issn of the journal>" },
                 {"type" : "doi", "id" : "<doi for the journal or series>" }
-            ]
+            ],
+
+            "oa_type" : "<hybrid|oa>",
+            "self_archiving" : {
+                "preprint" : {
+                    "policy" : "<can|restricted|cannot>",
+                    "embargo" : <number of months>
+                },
+                "postprint" : {
+                    "policy" : "<can|restricted|cannot>",
+                    "embargo" : <number of months>
+                },
+                "publisher" : {
+                    "policy" : "<can|restricted|cannot>",
+                    "embargo" : <number of months>
+                }
+            }
         },
 
         "rioxxterms:author" : [
@@ -49,7 +67,7 @@ class Monitor(dataobj.DataObj):
             ]
         },
 
-        "rioxxterms:type" : "<publication type>",
+        "rioxxterms:type" : "<publication type (article, etc)>",
         "dc:title" : "<title>",
 
         "rioxxterms:project" : [
@@ -87,7 +105,7 @@ class Monitor(dataobj.DataObj):
             }
         ],
 
-        "license_ref" : {
+        "ali:license_ref" : {
             "title" : "<name of licence>",
             "type" : "<type>",
             "url" : "<url>",
@@ -96,6 +114,22 @@ class Monitor(dataobj.DataObj):
 
         "jm:license_received" : [
             {"date" : "<date licence was checked>", "received" : true|false}
+        ],
+
+        "jm:repository" : [
+            {
+                "name" : "<Name of repository which holds a copy>",
+                "repo_url" : "<url for repository>",
+                "record_url" : "<url to representation of record in repository>",
+                "metadata" : "True|False|Unknown",
+                "fulltext" : "True|False|Unknown",
+                "machine_readable_fulltext" : "True|False|Unknown",
+                "aam" : "True|False|Unknown"
+            }
+        ],
+
+        "jm:provenance" : [
+            "<provenance information for the data in this record>"
         ]
     }
     """
@@ -105,7 +139,8 @@ class Monitor(dataobj.DataObj):
             "jm": u"http://jiscmonitor.jiscinvolve.org/",
             "dc": u"http://purl.org/dc/elements/1.1/",
             "dcterms": u"http://purl.org/dc/terms/",
-            "rioxxterms": u"http://rioxx.net/v2-0-beta-1/"
+            "rioxxterms": u"http://rioxx.net/v2-0-beta-1/",
+            "ali" : u"http://www.niso.org/schemas/ali/1.0/jsonld.json"
         }
     }
 
@@ -124,6 +159,14 @@ class Monitor(dataobj.DataObj):
 
     def has_apcs_for(self):
         return [apc.get("name") for apc in self._get_list("jm:apc")]
+
+    @property
+    def date_accepted(self):
+        return self._get_single("dcterms:dateAccepted", coerce=self._date_str())
+
+    @date_accepted.setter
+    def date_accepted(self, val):
+        self._set_single("dcterms:dateAccepted", val, coerce=self._date_str())
 
     @property
     def date_applied(self):
@@ -233,6 +276,53 @@ class Monitor(dataobj.DataObj):
         self._add_to_list("dc:source.identifier", {"type" : u"issn", "id" : val})
 
     @property
+    def oa_type(self):
+        return self._get_single("dc:source.oa_type", coerce=self._utf8_unicode())
+
+    @oa_type.setter
+    def oa_type(self, val):
+        self._set_single("dc:source.oa_type", val, allowed_values=["hybrid", "oa"], coerce=self._utf8_unicode())
+
+    @property
+    def self_archiving_preprint(self):
+        policy = self._get_single("dc:source.self_archiving.preprint.policy", coerce=self._utf8_unicode())
+        embargo = self._get_single("dc:source.self_archiving.preprint.embargo", coerce=self._int())
+        return policy, embargo
+
+    @self_archiving_preprint.setter
+    def self_archiving_preprint(self, val):
+        if not isinstance(val, tuple):
+            raise dataobj.DataSchemaException("self_archiving_preprint must be a tuple of policy and number of months")
+        self._set_single("dc:source.self_archiving.preprint.policy", val[0], coerce=self._utf8_unicode())
+        self._set_single("dc:source.self_archiving.preprint.embargo", val[1], coerce=self._int())
+
+    @property
+    def self_archiving_postprint(self):
+        policy = self._get_single("dc:source.self_archiving.postprint.policy", coerce=self._utf8_unicode())
+        embargo = self._get_single("dc:source.self_archiving.postprint.embargo", coerce=self._int())
+        return policy, embargo
+
+    @self_archiving_postprint.setter
+    def self_archiving_postprint(self, val):
+        if not isinstance(val, tuple):
+            raise dataobj.DataSchemaException("self_archiving_postprint must be a tuple of policy and number of months")
+        self._set_single("dc:source.self_archiving.postprint.policy", val[0], coerce=self._utf8_unicode())
+        self._set_single("dc:source.self_archiving.postprint.embargo", val[1], coerce=self._int())
+
+    @property
+    def self_archiving_publisher(self):
+        policy = self._get_single("dc:source.self_archiving.publisher.policy", coerce=self._utf8_unicode())
+        embargo = self._get_single("dc:source.self_archiving.publisher.embargo", coerce=self._int())
+        return policy, embargo
+
+    @self_archiving_publisher.setter
+    def self_archiving_publisher(self, val):
+        if not isinstance(val, tuple):
+            raise dataobj.DataSchemaException("self_archiving_publisher must be a tuple of policy and number of months")
+        self._set_single("dc:source.self_archiving.publisher.policy", val[0], coerce=self._utf8_unicode())
+        self._set_single("dc:source.self_archiving.publisher.embargo", val[1], coerce=self._int())
+
+    @property
     def publication_type(self):
         return self._get_single("rioxxterms:type", coerce=self._utf8_unicode())
 
@@ -297,11 +387,89 @@ class Monitor(dataobj.DataObj):
             obj["url"] = uc(url)
         if version is not None:
             obj["version"] = uc(version)
-        self._set_single("license_ref", obj)
+        self._set_single("ali:license_ref", obj)
 
     @property
     def license(self):
-        return self._get_single("license_ref")
+        return self._get_single("ali:license_ref")
+
+    @property
+    def repository(self):
+        return [Repository(x) for x in self._get_list("jm:repository")]
+
+    @repository.setter
+    def repository(self, val):
+        if not isinstance(val, list):
+            val = [val]
+
+        rawvals = []
+        for v in val:
+            if not isinstance(v, Repository):
+                v = Repository(v)
+            rawvals.append(v.data)
+
+        self._set_list("jm:reppsitory", rawvals)
+
+
+class Repository(dataobj.DataObj):
+    def __init__(self, raw=None):
+        super(Repository, self).__init__(raw)
+
+    @property
+    def name(self):
+        return self._get_single("name", coerce=self._utf8_unicode())
+
+    @name.setter
+    def name(self, val):
+        self._set_single("name", val, coerce=self._utf8_unicode())
+
+    @property
+    def url(self):
+        return self._get_single("repo_url", coerce=self._utf8_unicode())
+
+    @url.setter
+    def url(self, val):
+        self._set_single("repo_url", val, coerce=self._utf8_unicode())
+
+    @property
+    def record_url(self):
+        return self._get_single("record_url", coerce=self._utf8_unicode())
+
+    @record_url.setter
+    def record_url(self, val):
+        self._set_single("record_url", val, coerce=self._utf8_unicode())
+
+    @property
+    def metadata(self):
+        return self._get_single("metadata", coerce=self._utf8_unicode())
+
+    @metadata.setter
+    def metadata(self, val):
+        self._set_single("metadata", val, allowed_values=["True", "False", "Unknown"], coerce=self._utf8_unicode())
+
+    @property
+    def fulltext(self):
+        return self._get_single("fulltext", coerce=self._utf8_unicode())
+
+    @fulltext.setter
+    def fulltext(self, val):
+        self._set_single("fulltext", val, allowed_values=["True", "False", "Unknown"], coerce=self._utf8_unicode())
+
+    @property
+    def machine_readable_fulltext(self):
+        return self._get_single("machine_readable_fulltext", coerce=self._utf8_unicode())
+
+    @machine_readable_fulltext.setter
+    def machine_readable_fulltext(self, val):
+        self._set_single("machine_readable_fulltext", val, allowed_values=["True", "False", "Unknown"], coerce=self._utf8_unicode())
+
+    @property
+    def aam(self):
+        return self._get_single("aam", coerce=self._utf8_unicode())
+
+    @aam.setter
+    def aam(self, val):
+        self._set_single("aam", val, allowed_values=["True", "False", "Unknown"], coerce=self._utf8_unicode())
 
 
 class InstitutionalAPC(dataobj.DataObj):

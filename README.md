@@ -88,7 +88,7 @@ Where possible top-level keys in the model have been taken from the following me
         "dcterms": "http://purl.org/dc/terms/",
         "rioxxterms": "http://rioxx.net/v2-0-beta-1/",
         "ali" : "http://www.niso.org/schemas/ali/1.0/jsonld.json"
-    }
+    },
     
     "dcterms:dateAccepted" : "<date article was accepted for publication>",
     "jm:dateApplied" : "<date APC was initially applied for by author>",
