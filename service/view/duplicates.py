@@ -1,6 +1,6 @@
-from flask import Blueprint, request, url_for, make_response, abort, render_template
+from flask import Blueprint, url_for, render_template
 from service.models import InstitutionalRecord
-import json, urllib
+import json
 
 blueprint = Blueprint('duplicates', __name__)
 
@@ -66,6 +66,6 @@ def build_doi_search_url(doi):
 
     url = url_for('search', source=json.dumps(doi_query, separators=(',', ':')))
 
-    # We actually want the spaces in our params, so unquote those.
+    # We actually want the spaces in our params (to match in search), so unquote those.
     return url.replace('+', ' ')
 
