@@ -5,7 +5,7 @@ import json, urllib
 blueprint = Blueprint('duplicates', __name__)
 
 count_terms_query = {
-    "query": { "match_all" : {} },
+    "query": {"match_all": {}},
     "aggregations": {
         "count_terms": {
             "terms": {
@@ -20,12 +20,14 @@ count_terms_query = {
 doi_query = {
     "query": {
         "filtered": {
-            "query": { "match_all" : {} },
-            "filter": { "bool" : { "must": [
-                {"term": {"monitor.dc:identifier.id.exact" : "<DOI>"} }
-            ] } }
+            "query": {"match_all": {}},
+            "filter": {"bool": {"must": [
+                {"term": {"monitor.dc:identifier.id.exact": "<DOI>"}}
+            ]}}
         }
-    }
+    },
+    "from": 0,
+    "size": 25
 }
 
 # A list of [ (duplicate_val, count) ]
@@ -62,4 +64,8 @@ def build_doi_search_url(doi):
     this_doi_query = doi_query.copy()
     this_doi_query['query']['filtered']['filter']['bool']['must'][0]['term']['monitor.dc:identifier.id.exact'] = doi
 
-    return url_for('search', source=urllib.quote(json.dumps(doi_query)))
+    url = url_for('search', source=json.dumps(doi_query, separators=(',', ':')))
+
+    # We actually want the spaces in our params, so unquote those.
+    return url.replace('+', ' ')
+
