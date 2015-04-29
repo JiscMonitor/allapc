@@ -18,16 +18,12 @@ count_terms_query = {
 }
 
 doi_query = {
-    "query": {
-        "filtered": {
-            "query": {"match_all": {}},
-            "filter": {"bool": {"must": [
-                {"term": {"monitor.dc:identifier.id.exact": "<DOI>"}}
-            ]}}
+    "query" : {
+        "query_string" : {
+            "query" : "<DOI>",
+            "default_operator" : "OR"
         }
-    },
-    "from": 0,
-    "size": 25
+    }
 }
 
 # A list of [ (duplicate_val, count) ]
@@ -60,12 +56,8 @@ def detect_dupes(field):
 
 @blueprint.app_template_filter()
 def build_doi_search_url(doi):
-    # a query especially for this DOI
     this_doi_query = doi_query.copy()
-    this_doi_query['query']['filtered']['filter']['bool']['must'][0]['term']['monitor.dc:identifier.id.exact'] = doi
-
+    this_doi_query["query"]["query_string"]["query"] = "\"" + doi + "\""
     url = url_for('search', source=json.dumps(doi_query, separators=(',', ':')))
-
-    # We actually want the spaces in our params (to match in search), so unquote those.
     return url.replace('+', ' ')
 
