@@ -254,7 +254,9 @@ This section details the extended information required by the APC aggregation to
     
     "admin" : {
         "account" : "<user account who provided this record originally>",
-        "local_id" : "<identifier supplied by the user for this record>"
+        "local_id" : "<identifier supplied by the user for this record>",
+        "last_upload" : "<date of last upload of this record>",
+        "upload_source" : "<name of spreadsheet of last upload if relevant>"
     },
     
     "monitor" : { <apc record, as defined above> },

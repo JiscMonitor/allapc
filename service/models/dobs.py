@@ -603,6 +603,22 @@ class InstitutionalRecord(dataobj.DataObj, dao.InstitutionalRecordDAO):
         self._set_single("admin.account", val, coerce=self._utf8_unicode(), allow_none=False, ignore_none=True)
 
     @property
+    def last_upload(self):
+        return self._get_single("admin.last_upload", coerce=self._date_str())
+
+    @last_upload.setter
+    def last_upload(self, val):
+        self._set_single("admin.last_upload", val, coerce=self._date_str())
+
+    @property
+    def upload_source(self):
+        return self._get_single("admin.upload_source", coerce=self._utf8_unicode())
+
+    @upload_source.setter
+    def upload_source(self, val):
+        self._set_single("admin.upload_source", val, coerce=self._utf8_unicode())
+
+    @property
     def green_option(self):
         return self._get_single("index.green_option", coerce=self._utf8_unicode())
 

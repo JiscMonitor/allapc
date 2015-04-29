@@ -1,5 +1,6 @@
 from octopus.modules.crud.models import ES_CRUD_Wrapper, CRUDObject
 from service.models import Monitor, InstitutionalRecord
+from datetime import datetime
 
 class InstitutionalRecordCrud(ES_CRUD_Wrapper):
 
@@ -12,6 +13,10 @@ class InstitutionalRecordCrud(ES_CRUD_Wrapper):
             monitor = Monitor(raw)
             self.inner = self.INNER_TYPE()
             self.inner.monitor = monitor
+
+            self.inner.last_upload = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+            self.inner.upload_source = "API (Create)"
+
             if headers is not None:
                 local_id = headers.get("slug")
                 if local_id is not None:
@@ -25,6 +30,10 @@ class InstitutionalRecordCrud(ES_CRUD_Wrapper):
     def update(self, data, headers=None):
         monitor = Monitor(data)
         self.inner.monitor = monitor
+
+        self.inner.last_upload = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+        self.inner.upload_source = "API (Update)"
+
         if headers is not None:
             local_id = headers.get("slug")
             if local_id is not None:

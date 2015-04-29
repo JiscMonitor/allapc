@@ -34,16 +34,19 @@ jQuery(document).ready(function($) {
         var publisher_name = monitor["dcterms:publisher"] ? monitor["dcterms:publisher"]["name"] : "";
         var source_name = monitor["dc:source"] ? monitor["dc:source"]["name"] : "";
         var funder_name = monitor["rioxxterms:project"] && monitor["rioxxterms:project"].length > 0 ? monitor["rioxxterms:project"][0]["name"] : "";
+        var cost = monitor["jm:apc"][0]["amount_gbp"];
+        if (!cost) { cost = " unknown"}
 
+        // left side
         result += "<div class='row-fluid' style='margin-top: 10px; margin-bottom: 10px'>";
         result += "<div class='span10'>";
         var title = monitor["dc:title"] ? monitor["dc:title"] : "Untitled";
         result += "<strong style='font-size: 150%'>" + title + "</strong><br>";
         result += publisher_name + " - " + source_name + issn + "<br>";
-        result += funder_name + " - " + monitor["jm:apc"][0]["name"] + fund;
+        result += funder_name + " - " + monitor["jm:apc"][0]["name"] + fund + "<br>";
+        result += "<em>Last uploaded on " + record["admin"]["last_upload"] + " via " + record["admin"]["upload_source"] + "</em>";
 
-        var cost = monitor["jm:apc"][0]["amount_gbp"];
-        if (!cost) { cost = " unknown"}
+        // right side
         result += "</div><div class='span2'>";
         result += "<strong style='font-size: 150%'>£" + cost + "</strong><br>";
         if (monitor["jm:apc"][0]["additional_costs"]) {
@@ -64,7 +67,7 @@ jQuery(document).ready(function($) {
     facets.push({'field': 'monitor.rioxxterms:project.name.exact', 'display': 'Funder'});
     facets.push({'field': 'monitor.jm:apc.name.exact', 'display': 'Organisation'});
     facets.push({'field': 'monitor.jm:apc.fund.name.exact', 'display': 'Paid from fund'});
-    facets.push({'field': 'monitor.license_ref.title.exact', 'display': 'Licence Requested'});
+    facets.push({'field': 'monitor.ali:license_ref.title.exact', 'display': 'Licence Requested'});
 
     // FIXME: can't have a range search until the underlying data is numeric
     //facets.push({
