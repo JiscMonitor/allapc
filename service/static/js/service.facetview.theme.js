@@ -68,6 +68,7 @@ jQuery(document).ready(function($) {
     facets.push({'field': 'monitor.jm:apc.name.exact', 'display': 'Organisation'});
     facets.push({'field': 'monitor.jm:apc.fund.name.exact', 'display': 'Paid from fund'});
     facets.push({'field': 'monitor.ali:license_ref.title.exact', 'display': 'Licence Requested'});
+    facets.push({"field" : 'monitor.dc:identifier.id.exact', "display" : "Identifier", "hidden" : true, "size" : 1});
 
     // FIXME: can't have a range search until the underlying data is numeric
     //facets.push({

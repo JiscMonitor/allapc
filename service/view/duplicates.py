@@ -1,10 +1,11 @@
-from flask import Blueprint, request, url_for, make_response, abort, render_template
+from flask import Blueprint, url_for, render_template
 from service.models import InstitutionalRecord
+import json
 
 blueprint = Blueprint('duplicates', __name__)
 
 count_terms_query = {
-    "query": { "match_all" : {} },
+    "query": {"match_all": {}},
     "aggregations": {
         "count_terms": {
             "terms": {
@@ -14,6 +15,19 @@ count_terms_query = {
             }
         }
     }
+}
+
+doi_query = {
+    "query": {
+        "filtered": {
+            "query": {"match_all": {}},
+            "filter": {"bool": {"must": [
+                {"term": {"monitor.dc:identifier.id.exact": "<DOI>"}}
+            ]}}
+        }
+    },
+    "from": 0,
+    "size": 25
 }
 
 # A list of [ (duplicate_val, count) ]
@@ -43,3 +57,15 @@ def detect_dupes(field):
     except ValueError:
         # No duplicates found
         return False
+
+@blueprint.app_template_filter()
+def build_doi_search_url(doi):
+    # a query especially for this DOI
+    this_doi_query = doi_query.copy()
+    this_doi_query['query']['filtered']['filter']['bool']['must'][0]['term']['monitor.dc:identifier.id.exact'] = doi
+
+    url = url_for('search', source=json.dumps(doi_query, separators=(',', ':')))
+
+    # We actually want the spaces in our params (to match in search), so unquote those.
+    return url.replace('+', ' ')
+
