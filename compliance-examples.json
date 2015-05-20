@@ -1,0 +1,1029 @@
+[
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "0003-4932"
+        }, 
+        {
+          "type": "issn", 
+          "id": "1528-1140"
+        }
+      ], 
+      "oa_type": "hybrid", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "cannot"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "embargo": 12, 
+          "policy": "restricted"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "25115429"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.1097/sla.0000000000000894"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC4160115"
+      }
+    ], 
+    "dc:title": "Addressing the appropriateness of elective colon resection for diverticulitis: a report from the scoap certain collaborative.", 
+    "ali:license_ref": {
+      "title": "non-standard-licence"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "True", 
+        "machine_readable_fulltext": "False", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Lippincott, Williams & Wilkins"
+    }
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "0012-1622"
+        }, 
+        {
+          "type": "issn", 
+          "id": "1469-8749"
+        }
+      ], 
+      "oa_type": "hybrid", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "cannot"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "embargo": 12, 
+          "policy": "restricted"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "24641712"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.1111/dmcn.12435"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC4132119"
+      }
+    ], 
+    "dc:title": "Stability of motor function and associated impairments between childhood and adolescence in young people with cerebral palsy in Europe.", 
+    "ali:license_ref": {
+      "title": "non-standard-licence"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "True", 
+        "machine_readable_fulltext": "False", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Wiley"
+    }
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "1742-4690"
+        }
+      ], 
+      "oa_type": "oa", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "can"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "policy": "can"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "25063042"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.1186/1742-4690-11-59"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC4222864"
+      }
+    ], 
+    "dc:title": "Microarray analysis reveals global modulation of endogenous retroelement transcription by microbes", 
+    "ali:license_ref": {
+      "title": "cc-by"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "False", 
+        "machine_readable_fulltext": "True", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "BioMed Central"
+    }
+  }, 
+  {
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "ali:license_ref": {
+      "title": "cc-by-sa"
+    }, 
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "1911-2092"
+        }
+      ], 
+      "oa_type": "hybrid"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "False", 
+        "machine_readable_fulltext": "True", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "25009687"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC4085088"
+      }
+    ]
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "0048-0169"
+        }
+      ], 
+      "oa_type": "hybrid", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "cannot"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "policy": "can"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "20514085"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.1080/00480169.2010.67513"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC3082775"
+      }
+    ], 
+    "ali:license_ref": {
+      "title": "cc-by-nd"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "False", 
+        "machine_readable_fulltext": "True", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Taylor & Francis"
+    }
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "0964-6906"
+        }, 
+        {
+          "type": "issn", 
+          "id": "1460-2083"
+        }
+      ], 
+      "oa_type": "hybrid", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "cannot"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "embargo": 12, 
+          "policy": "restricted"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "24986916"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.1093/hmg/ddu335"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC4222358"
+      }
+    ], 
+    "dc:title": "A population-based study of KCNH7 p.Arg394His and bipolar spectrum disorder.", 
+    "ali:license_ref": {
+      "title": "cc-by-nc"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "False", 
+        "machine_readable_fulltext": "True", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Oxford University Press (OUP)"
+    }
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "0959-4965"
+        }, 
+        {
+          "type": "issn", 
+          "id": "1473-558X"
+        }
+      ], 
+      "oa_type": "hybrid", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "cannot"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "embargo": 12, 
+          "policy": "restricted"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "25325349"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.1097/wnr.0000000000000278"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC4222712"
+      }
+    ], 
+    "ali:license_ref": {
+      "title": "cc-by-nc-nd"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "False", 
+        "machine_readable_fulltext": "True", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Lippincott, Williams & Wilkins"
+    }
+  }, 
+  {
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "dc:title": "The effects of fluorescent nano-diamonds on neuronal survival and morphogenesis", 
+    "jm:repository": []
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "1040-8398"
+        }, 
+        {
+          "type": "issn", 
+          "id": "1549-7852"
+        }
+      ], 
+      "oa_type": "hybrid", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "cannot"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "policy": "can"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "24915391"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.1080/10408398.2011.654013"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC4192901"
+      }
+    ], 
+    "dc:title": "Sugar-fat seesaw: a systematic review of the evidence.", 
+    "ali:license_ref": {
+      "title": "non-standard-licence"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "False", 
+        "machine_readable_fulltext": "True", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Taylor & Francis"
+    }
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "1918-3003"
+        }, 
+        {
+          "type": "issn", 
+          "id": "1918-3011"
+        }
+      ], 
+      "oa_type": "oa", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "unknown"
+        }, 
+        "preprint": {
+          "policy": "unknown"
+        }, 
+        "postprint": {
+          "policy": "unknown"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "25368694"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.14740/jocmr1960w"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC4217745"
+      }
+    ], 
+    "ali:license_ref": {
+      "title": "cc-by"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "False", 
+        "machine_readable_fulltext": "True", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Elmer Press"
+    }
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "0012-1606"
+        }, 
+        {
+          "type": "issn", 
+          "id": "1095-564X"
+        }
+      ], 
+      "oa_type": "hybrid", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "cannot"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "policy": "can"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "25127992"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.1016/j.ydbio.2014.08.003"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC4182926"
+      }
+    ], 
+    "ali:license_ref": {
+      "title": "cc-by-nc-nd"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "True", 
+        "machine_readable_fulltext": "True", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Elsevier"
+    }
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "1932-6203"
+        }
+      ], 
+      "oa_type": "oa", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "can"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "policy": "can"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "21698184"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.1371/journal.pone.0020832.t001"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC3116839"
+      }
+    ], 
+    "dc:title": "Mice with a Targeted Deletion of the Type 2 Deiodinase Are Insulin Resistant and Susceptible to Diet Induced Obesity", 
+    "ali:license_ref": {
+      "title": "cc-by"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "False", 
+        "machine_readable_fulltext": "True", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Public Library of Science"
+    }
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "0303-7207"
+        }, 
+        {
+          "type": "issn", 
+          "id": "1872-8057"
+        }
+      ], 
+      "oa_type": "hybrid", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "cannot"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "policy": "can"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "23954741"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.1016/j.mce.2013.08.005"
+      }
+    ], 
+    "dc:title": "Estrogen receptor beta in breast cancer tests", 
+    "ali:license_ref": {
+      "title": "cc-by-nc-nd"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [], 
+    "dcterms:publisher": {
+      "name": "Elsevier"
+    }
+  }, 
+  {
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "dc:title": "Diffusion-weighted imaging and diagnosis of transient ischemic attack.", 
+    "jm:repository": [], 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "24085376"
+      }
+    ]
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "1042-8194"
+        }, 
+        {
+          "type": "issn", 
+          "id": "1029-2403"
+        }
+      ], 
+      "oa_type": "hybrid", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "cannot"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "embargo": 12, 
+          "policy": "restricted"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "23837493"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.3109/10428194.2013.818142"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC4134930"
+      }
+    ], 
+    "ali:license_ref": {
+      "title": "non-standard-licence"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "True", 
+        "machine_readable_fulltext": "False", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Informa Healthcare"
+    }
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "1916-9736"
+        }, 
+        {
+          "type": "issn", 
+          "id": "1916-9744"
+        }
+      ], 
+      "oa_type": "oa", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "can"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "policy": "can"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "24576360"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.5539/gjhs.v6n2p1"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC3939357"
+      }
+    ], 
+    "ali:license_ref": {
+      "title": "non-standard-licence"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "True", 
+        "machine_readable_fulltext": "False", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }, 
+      {
+        "name": "CORE", 
+        "repo_url": "http://core.ac.uk/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Canadian Center of Science and Education"
+    }
+  }, 
+  {
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "dc:title": "Im - Perfect robustness and the adaptation of metabolic networks subject to metabolic and gene-expression regulation:marrying control engineering with metabolic control analysis", 
+    "jm:repository": []
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "0033-2917"
+        }, 
+        {
+          "type": "issn", 
+          "id": "1469-8978"
+        }
+      ], 
+      "oa_type": "hybrid", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "cannot"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "policy": "can"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "23217646"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.1017/s0033291712002784"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC4231789"
+      }
+    ], 
+    "dc:title": "Increased serotonin transporter gene (SERT) DNA methylation is associated with bullying victimization and blunted cortisol response to stress in childhood: a longitudinal study of discordant monozygotic twins.", 
+    "ali:license_ref": {
+      "title": "non-standard-licence"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "True", 
+        "machine_readable_fulltext": "False", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Cambridge University Press (CUP)"
+    }
+  }, 
+  {
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "1016-7315"
+        }, 
+        {
+          "type": "issn", 
+          "id": "2212-5043"
+        }
+      ], 
+      "oa_type": "hybrid", 
+      "self_archiving": {
+        "publisher": {
+          "policy": "cannot"
+        }, 
+        "preprint": {
+          "policy": "can"
+        }, 
+        "postprint": {
+          "policy": "can"
+        }
+      }
+    }, 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "24578597"
+      }, 
+      {
+        "type": "doi", 
+        "id": "10.1016/j.jsha.2013.11.004"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC3936236"
+      }
+    ], 
+    "ali:license_ref": {
+      "title": "non-standard-licence"
+    }, 
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "False", 
+        "machine_readable_fulltext": "False", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }, 
+      {
+        "name": "CORE", 
+        "repo_url": "http://core.ac.uk/"
+      }
+    ], 
+    "dcterms:publisher": {
+      "name": "Elsevier"
+    }
+  }, 
+  {
+    "@context": {
+      "jm": "http://jiscmonitor.jiscinvolve.org/", 
+      "rioxxterms": "http://rioxx.net/v2-0-beta-1/", 
+      "dcterms": "http://purl.org/dc/terms/", 
+      "dc": "http://purl.org/dc/elements/1.1/", 
+      "ali": "http://www.niso.org/schemas/ali/1.0/jsonld.json"
+    }, 
+    "dc:source": {
+      "identifier": [
+        {
+          "type": "issn", 
+          "id": "1941-2789"
+        }
+      ], 
+      "oa_type": "hybrid"
+    }, 
+    "jm:repository": [
+      {
+        "aam": "False", 
+        "machine_readable_fulltext": "False", 
+        "name": "EPMC", 
+        "repo_url": "http://europepmc.org/"
+      }
+    ], 
+    "dc:identifier": [
+      {
+        "type": "pmid", 
+        "id": "24578782"
+      }, 
+      {
+        "type": "pmcid", 
+        "id": "PMC3935652"
+      }
+    ]
+  }
+]

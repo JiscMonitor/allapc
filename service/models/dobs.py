@@ -268,11 +268,22 @@ class Monitor(dataobj.DataObj):
         if val is None:
             return
 
+        if not isinstance(val, list):
+            val = [val]
+
+        uc = self._utf8_unicode()
+        val = [self._coerce(v, uc) for v in val]
+
+        self._delete_from_list("dc:source.identifier", matchsub={"type" : "issn"})
+
+        for v in val:
+            self._add_to_list("dc:source.identifier", {"type" : u"issn", "id" : v})
+
+    def add_issn(self, val):
+        if val is None:
+            return
         uc = self._utf8_unicode()
         val = self._coerce(val, uc)
-
-        # FIXME: note that this implies only one issn allowed
-        self._delete_from_list("dc:source.identifier", matchsub={"type" : "issn"})
         self._add_to_list("dc:source.identifier", {"type" : u"issn", "id" : val})
 
     @property
@@ -408,7 +419,12 @@ class Monitor(dataobj.DataObj):
                 v = Repository(v)
             rawvals.append(v.data)
 
-        self._set_list("jm:reppsitory", rawvals)
+        self._set_list("jm:repository", rawvals)
+
+    def add_repository(self, val):
+        if isinstance(val, Repository):
+            val = val.data
+        self._add_to_list("jm:repository", val)
 
 
 class Repository(dataobj.DataObj):
